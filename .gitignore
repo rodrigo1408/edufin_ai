@@ -1,0 +1,24 @@
+# Segredos e dados locais
+.env
+backend/data/
+*.mv.db
+*.trace.db
+
+# Build
+backend/target/
+frontend/dist/
+frontend/node_modules/
+# SPA copiado para o backend em builds locais (gerado por "npm run build:backend")
+backend/src/main/resources/static/
+
+# Testes
+frontend/test-results/
+frontend/playwright-report/
+frontend/coverage/
+
+# IDE / SO
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db

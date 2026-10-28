@@ -1,0 +1,20 @@
+# Testes: H2 em memória (modo PostgreSQL) com as MESMAS migrações Flyway da produção e
+# validação do esquema pelo Hibernate. Rate limit e jobs agendados desativados para determinismo.
+spring:
+  datasource:
+    url: jdbc:h2:mem:edufin-test;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+
+app:
+  rate-limit:
+    enabled: false
+  scheduler:
+    reminders-cron: "-"
+    retention-cron: "-"
+  public-url: http://localhost:8080
+
+logging:
+  level:
+    root: WARN
+    br.finedu: WARN

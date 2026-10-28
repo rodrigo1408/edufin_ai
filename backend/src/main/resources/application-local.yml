@@ -1,0 +1,7 @@
+# Perfil "local": execução sem Docker/PostgreSQL. Usa H2 em ARQUIVO (./data), portanto os
+# dados persistem entre reinicializações. Indicado apenas para desenvolvimento e avaliação.
+spring:
+  datasource:
+    url: jdbc:h2:file:./data/edufin;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH;AUTO_SERVER=TRUE
+    username: sa
+    password: ""
