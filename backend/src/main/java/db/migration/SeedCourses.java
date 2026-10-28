@@ -47,11 +47,11 @@ final class SeedCourses {
                             new LessonSeed("Necessidades x desejos", 8, null, """
                                     ## Necessidade
 
-                                    É aquilo que você precisa para viver, estudar e se manter saudável: alimentação, transporte para a escola, material escolar, saúde.
+                                    É aquilo que você precisa para viver, estudar e se manter saudável: alimentação, moradia, contas básicas, transporte para o trabalho ou para os estudos, saúde.
 
                                     ## Desejo
 
-                                    É aquilo que seria bom ter, mas dá para esperar ou viver sem: o tênis da moda, a skin nova, o fone mais caro.
+                                    É aquilo que seria bom ter, mas dá para esperar ou viver sem: o tênis da moda, o celular do ano, o fone mais caro.
 
                                     ## Desejo não é vilão
 
@@ -71,8 +71,8 @@ final class SeedCourses {
                             new LessonSeed("Montando seu primeiro orçamento", 10, null, """
                                     ## Passo a passo
 
-                                    1. **Anote o que entra**: mesada, bicos, presentes em dinheiro.
-                                    2. **Liste os gastos fixos**: os que se repetem todo mês (ex.: transporte, lanche).
+                                    1. **Anote o que entra**: salário, mesada, bicos, renda extra.
+                                    2. **Liste os gastos fixos**: os que se repetem todo mês (ex.: aluguel, contas, transporte).
                                     3. **Estime os gastos variáveis**: lazer, jogos, roupas.
                                     4. **Defina quanto vai guardar** — e separe esse valor primeiro.
                                     5. **Compare o previsto com o realizado** no fim do mês.
@@ -83,7 +83,7 @@ final class SeedCourses {
                                     - 30% para desejos
                                     - 20% para guardar ou investir
 
-                                    Se a sua família já cobre as necessidades, você pode guardar uma fatia maior. Adapte à sua realidade.
+                                    Se parte das suas necessidades já é coberta (por exemplo, por quem mora com você), você pode guardar uma fatia maior. Adapte à sua realidade.
 
                                     ## Exemplo
 
@@ -98,7 +98,7 @@ final class SeedCourses {
 
                                     ## Como fazer na plataforma
 
-                                    - Use **Transações** para lançar receitas (mesada, trabalho) e despesas (lanche, transporte).
+                                    - Use **Transações** para lançar receitas (salário, mesada, bicos) e despesas (alimentação, transporte).
                                     - Escolha a **categoria** certa — ela alimenta os gráficos de Relatórios.
                                     - Se for só um exercício, marque como **simulado**.
 
@@ -136,7 +136,7 @@ final class SeedCourses {
 
                                     ## Onde guardar?
 
-                                    O importante é um lugar seguro, separado do dinheiro do dia a dia. Converse com seus responsáveis sobre opções como uma conta digital para menores ou um investimento conservador acompanhado por eles.
+                                    O importante é um lugar seguro, separado do dinheiro do dia a dia. Boas opções são uma conta separada que renda ou um investimento conservador com resgate fácil. Se você for menor de idade, escolha junto com seus responsáveis.
 
                                     > Dinheiro guardado \"na carteira\" costuma ser gasto. Separe!
                                     """),
@@ -147,7 +147,7 @@ final class SeedCourses {
 
                                     ## Quanto guardar?
 
-                                    Para adultos, fala-se em 3 a 6 meses de gastos essenciais. Para você, um bom começo é o equivalente a **um ou dois meses de mesada**.
+                                    A referência mais usada é de 3 a 6 meses de gastos essenciais. Se isso parecer muito agora, comece com **um mês de gastos essenciais** e vá aumentando.
 
                                     ## Regras da reserva
 
@@ -189,7 +189,7 @@ final class SeedCourses {
 
                                     ## 3. Ganhe um extra
 
-                                    Vender algo que você não usa ou fazer pequenos trabalhos (sempre com autorização dos responsáveis) acelera a meta.
+                                    Vender algo que você não usa ou fazer pequenos trabalhos (se você for menor de idade, sempre com autorização dos responsáveis) acelera a meta.
 
                                     ## 4. Torne visível
 
@@ -254,7 +254,7 @@ final class SeedCourses {
 
                                     - **Nunca** compartilhe senhas ou códigos — nem com quem diz ser do banco ou da plataforma.
                                     - Desconfie de prêmios que você não pediu.
-                                    - Na dúvida, **pare** e converse com um adulto de confiança.
+                                    - Na dúvida, **pare** e converse com alguém de confiança.
 
                                     > Nesta plataforma, nunca pediremos senhas de banco ou dados de cartão.
 
@@ -384,7 +384,7 @@ final class SeedCourses {
                                     1. Liste todas: valor, juros e prazo.
                                     2. Pare de aumentar (corte o uso do crédito).
                                     3. Priorize as de **juros mais altos**.
-                                    4. Negocie, com ajuda de um responsável.
+                                    4. Negocie com o credor e, se precisar, peça orientação a alguém de confiança ou a um órgão de defesa do consumidor.
 
                                     > Pedir ajuda cedo é sempre melhor do que esconder o problema.
 
@@ -411,9 +411,9 @@ final class SeedCourses {
                                     - Monte a **reserva de emergência**.
                                     - Entenda o produto antes de aplicar.
 
-                                    ## Menores de idade
+                                    ## Se você for menor de idade
 
-                                    Investimentos de menores são feitos em contas abertas e acompanhadas pelos **responsáveis legais**. Converse com sua família.
+                                    Investimentos de menores são feitos em contas abertas e acompanhadas pelos **responsáveis legais**.
 
                                     > Quer praticar? Na Carteira Simulada você testa ideias sem dinheiro real.
                                     """),
@@ -459,7 +459,7 @@ final class SeedCourses {
 
                                     - Simulações usam taxas constantes; a vida real varia.
                                     - Rentabilidade passada não garante rentabilidade futura.
-                                    - Decisões reais: sempre com seus responsáveis.
+                                    - Decisões reais: entenda o produto antes e, se for menor de idade, decida com seus responsáveis.
 
                                     Feche o curso com o quiz **Fundamentos de investimentos**.
                                     """))))));

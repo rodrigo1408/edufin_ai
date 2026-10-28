@@ -8,10 +8,11 @@
       "controlar gastos",
       "planejar",
       "planejamento",
-      "mesada"
+      "mesada",
+      "salario"
     ],
     "question": "Como organizar meu orçamento?",
-    "answer": "Orçamento é um plano para o seu dinheiro. Um jeito simples: 1) anote quanto você recebe no mês (mesada, bicos, presentes); 2) liste seus gastos fixos (ex.: transporte, lanche) e os variáveis (lazer, jogos); 3) defina quanto vai guardar ANTES de gastar; 4) acompanhe semanalmente. Uma regra de referência é a 50-30-20: 50% para o essencial, 30% para desejos e 20% para guardar — mas adapte à sua realidade. Aqui na plataforma, use a área de Transações para registrar tudo e ver o resumo do mês.",
+    "answer": "Orçamento é um plano para o seu dinheiro. Um jeito simples: 1) anote quanto você recebe no mês (salário, mesada, bicos, renda extra); 2) liste seus gastos fixos (ex.: aluguel, contas, transporte) e os variáveis (lazer, jogos); 3) defina quanto vai guardar ANTES de gastar; 4) acompanhe semanalmente. Uma regra de referência é a 50-30-20: 50% para o essencial, 30% para desejos e 20% para guardar — mas adapte à sua realidade. Aqui na plataforma, use a área de Transações para registrar tudo e ver o resumo do mês.",
     "links": [
       {
         "label": "Registrar transações",
@@ -23,7 +24,7 @@
       }
     ],
     "alternative": "Pense no orçamento como o mapa de uma viagem: antes de sair, você decide quanto vai gastar com transporte, comida e diversão. Sem o mapa, o dinheiro acaba no meio do caminho. O orçamento é só isso: decidir o destino de cada real antes de ele sumir.",
-    "example": "Exemplo: você recebe R$ 150 de mesada. Separa R$ 30 para a meta do fone assim que recebe, reserva R$ 60 para lanches da escola e R$ 40 para lazer. Sobram R$ 20 para imprevistos. No fim do mês, compara o que planejou com o que registrou nas Transações."
+    "example": "Exemplo: você recebe R$ 1.500 no mês. Separa R$ 150 para a sua meta assim que recebe, reserva R$ 900 para as contas e o mercado e R$ 250 para lazer. Sobram R$ 200 para imprevistos. No fim do mês, compara o que planejou com o que registrou nas Transações."
   },
   {
     "id": "budget-02",
@@ -42,8 +43,8 @@
         "path": "/transacoes"
       }
     ],
-    "alternative": "Imagine sua mesada como uma pizza de 10 fatias: 5 fatias vão para o que é essencial, 3 para o que é legal mas dispensável e 2 você guarda para o futuro. A proporção ajuda a não comer a pizza inteira de uma vez.",
-    "example": "Exemplo com R$ 200: R$ 100 para necessidades (transporte, lanche), R$ 60 para desejos (cinema, jogos) e R$ 40 guardados. Se a família já paga o essencial, você pode inverter e guardar mais."
+    "alternative": "Imagine sua renda como uma pizza de 10 fatias: 5 fatias vão para o que é essencial, 3 para o que é legal mas dispensável e 2 você guarda para o futuro. A proporção ajuda a não comer a pizza inteira de uma vez.",
+    "example": "Exemplo com R$ 200: R$ 100 para necessidades (transporte, alimentação), R$ 60 para desejos (cinema, jogos) e R$ 40 guardados. Se parte do essencial já é paga por outra pessoa, você pode guardar mais."
   },
   {
     "id": "budget-03",
@@ -56,7 +57,7 @@
       "quero"
     ],
     "question": "Qual a diferença entre necessidade e desejo?",
-    "answer": "Necessidade é o que você precisa para viver e estudar (alimentação, transporte para a escola, material). Desejo é o que seria bom ter, mas dá para esperar ou viver sem (o tênis novo, a skin do jogo). Desejos não são proibidos! A ideia é escolher conscientemente e planejar para eles — muitas vezes transformando um desejo em uma meta.",
+    "answer": "Necessidade é o que você precisa para viver, trabalhar e estudar (alimentação, moradia, contas, transporte). Desejo é o que seria bom ter, mas dá para esperar ou viver sem (o tênis novo, o celular do ano). Desejos não são proibidos! A ideia é escolher conscientemente e planejar para eles — muitas vezes transformando um desejo em uma meta.",
     "links": [
       {
         "label": "Criar uma meta",
@@ -64,7 +65,7 @@
       }
     ],
     "alternative": "Uma pergunta simples ajuda: \"se eu não comprar isso hoje, o que acontece?\". Se a resposta for \"nada de grave\", provavelmente é um desejo — e pode virar uma meta.",
-    "example": "Exemplo: o tênis do uniforme rasgou e você precisa ir à escola — necessidade. O tênis edição limitada que todo mundo está usando, quando o seu ainda está bom — desejo. Os dois são válidos, mas o segundo pode esperar e ser planejado."
+    "example": "Exemplo: seu único sapato de trabalho rasgou e você precisa dele no dia seguinte — necessidade. O tênis edição limitada que todo mundo está usando, quando o seu ainda está bom — desejo. Os dois são válidos, mas o segundo pode esperar e ser planejado."
   },
   {
     "id": "saving-01",
@@ -97,7 +98,7 @@
       "reserva"
     ],
     "question": "O que é reserva de emergência?",
-    "answer": "É um dinheiro guardado só para imprevistos: o celular que quebrou, um gasto inesperado. Para adultos, costuma-se recomendar de 3 a 6 meses de gastos essenciais. Para você, pode começar com um valor menor, como o equivalente a um ou dois meses de mesada. Ela deve ficar em um lugar seguro e fácil de resgatar — e não é para gastar com desejos!",
+    "answer": "É um dinheiro guardado só para imprevistos: o celular que quebrou, um gasto inesperado. Costuma-se recomendar de 3 a 6 meses de gastos essenciais. Se isso parecer muito agora, comece com um mês de gastos essenciais e vá aumentando. Ela deve ficar em um lugar seguro e fácil de resgatar — e não é para gastar com desejos!",
     "links": [
       {
         "label": "Criar meta de reserva",
@@ -162,7 +163,7 @@
         "path": "/calculadora"
       }
     ],
-    "alternative": "Nos juros simples, o rendimento é sempre calculado sobre o valor do começo, como uma mesada fixa que o dinheiro recebe todo mês.",
+    "alternative": "Nos juros simples, o rendimento é sempre calculado sobre o valor do começo, como um valor fixo que o dinheiro recebe todo mês.",
     "example": "Exemplo: R$ 200 a 3% ao mês rendem R$ 6 por mês. Em 4 meses: 200 + 4 × 6 = R$ 224. Confira na Calculadora escolhendo \"Simples\"."
   },
   {
@@ -259,7 +260,7 @@
       "endividado"
     ],
     "question": "O que fazer para não me endividar?",
-    "answer": "Algumas atitudes protegem você: gaste menos do que recebe; evite comprar por impulso (espere 24h antes de compras não planejadas); não use crédito para pagar desejos; tenha uma reserva para imprevistos; e acompanhe tudo que entra e sai. Se já existe uma dívida, liste quanto deve, a quem e com que juros, e priorize as de juros maiores — conversando com um responsável.",
+    "answer": "Algumas atitudes protegem você: gaste menos do que recebe; evite comprar por impulso (espere 24h antes de compras não planejadas); não use crédito para pagar desejos; tenha uma reserva para imprevistos; e acompanhe tudo que entra e sai. Se já existe uma dívida, liste quanto deve, a quem e com que juros, e priorize as de juros maiores — e negocie com o credor.",
     "links": [
       {
         "label": "Curso: Crédito e dívidas",
@@ -324,7 +325,7 @@
       "aplicar dinheiro"
     ],
     "question": "O que é investir?",
-    "answer": "Investir é aplicar dinheiro hoje esperando ter mais no futuro. Todo investimento tem três características: rentabilidade (quanto pode render), risco (chance de perder ou render menos) e liquidez (rapidez para resgatar). Antes de investir, o ideal é ter metas claras e uma reserva de emergência. Menores de idade só podem investir com contas abertas e acompanhadas pelos responsáveis. Quer praticar sem dinheiro real? Use a Carteira Simulada!",
+    "answer": "Investir é aplicar dinheiro hoje esperando ter mais no futuro. Todo investimento tem três características: rentabilidade (quanto pode render), risco (chance de perder ou render menos) e liquidez (rapidez para resgatar). Antes de investir, o ideal é ter metas claras e uma reserva de emergência. Quem é menor de idade só pode investir com contas abertas e acompanhadas pelos responsáveis. Quer praticar sem dinheiro real? Use a Carteira Simulada!",
     "links": [
       {
         "label": "Carteira simulada",
@@ -431,7 +432,7 @@
       "seguranca"
     ],
     "question": "Como me proteger de golpes financeiros?",
-    "answer": "Sinais de alerta: promessa de ganho alto e rápido, pressão para decidir na hora, pedido de senha ou código, links estranhos e \"oportunidades\" que dependem de chamar mais pessoas (pirâmide). Nunca compartilhe senhas ou códigos — nem com quem diz ser do banco. Na dúvida, não clique, não pague e converse com um adulto de confiança.",
+    "answer": "Sinais de alerta: promessa de ganho alto e rápido, pressão para decidir na hora, pedido de senha ou código, links estranhos e \"oportunidades\" que dependem de chamar mais pessoas (pirâmide). Nunca compartilhe senhas ou códigos — nem com quem diz ser do banco. Na dúvida, não clique, não pague e converse com alguém de confiança.",
     "links": [
       {
         "label": "Cursos",
@@ -439,7 +440,7 @@
       }
     ],
     "alternative": "Golpistas usam pressa e promessas grandes para você não pensar. Se a oferta exige decisão imediata ou um código seu, pare.",
-    "example": "Exemplo: você recebe uma mensagem dizendo que ganhou um prêmio e precisa informar o código que chegou por SMS. Esse código dá acesso à sua conta. Não envie e mostre a mensagem a um adulto de confiança."
+    "example": "Exemplo: você recebe uma mensagem dizendo que ganhou um prêmio e precisa informar o código que chegou por SMS. Esse código dá acesso à sua conta. Não envie e mostre a mensagem a alguém de confiança."
   },
   {
     "id": "platform-01",

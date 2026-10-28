@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 /**
  * Filtro de conteúdo para textos públicos (fórum, comentários, avaliações). Pensado para um
- * público adolescente:
+ * público de todas as idades, incluindo menores de idade:
  * <ul>
  *   <li>bloqueia dados de contato e documentos (telefone, e-mail, CPF), reduzindo riscos de
  *       aliciamento e exposição de dados pessoais;</li>

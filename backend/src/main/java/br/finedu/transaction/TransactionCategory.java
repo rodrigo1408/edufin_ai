@@ -2,7 +2,7 @@ package br.finedu.transaction;
 
 /** Categorias fixas, cada uma válida para um único tipo (receita ou despesa). */
 public enum TransactionCategory {
-    ALLOWANCE(Transaction.Type.INCOME, "Mesada"),
+    ALLOWANCE(Transaction.Type.INCOME, "Salário ou mesada"),
     WORK(Transaction.Type.INCOME, "Trabalho / bico"),
     GIFT_RECEIVED(Transaction.Type.INCOME, "Presente recebido"),
     SALE(Transaction.Type.INCOME, "Venda"),

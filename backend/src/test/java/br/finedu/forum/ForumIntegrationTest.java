@@ -40,7 +40,7 @@ class ForumIntegrationTest extends IntegrationTest {
     }
 
     @Test
-    void contentPolicyProtectsTeenagers() throws Exception {
+    void contentPolicyBlocksPersonalData() throws Exception {
         TestUser u = register();
         postAs(u, "/api/forum/posts", """
                 {"category":"QUESTIONS","title":"Me chama","body":"meu whats 11 98765-4321 pra conversar"}

@@ -84,7 +84,7 @@ function CourseMetaForm({ initial, isNew, onSubmit, onCancel }: { initial: Cours
         <SelectField label="Nível" value={f.difficulty} onChange={(e) => set('difficulty', e.target.value as Difficulty)} options={options(difficultyLabel)} />
         <TextField label="Duração estimada (min)" type="number" value={f.estimatedMinutes} onChange={(e) => set('estimatedMinutes', Number(e.target.value))} />
         <TextField label="Ordem na trilha" type="number" value={f.position} onChange={(e) => set('position', Number(e.target.value))} />
-        <Checkbox label="Publicado (visível para estudantes)" checked={f.published} onChange={(e) => set('published', e.target.checked)} />
+        <Checkbox label="Publicado (visível para os usuários)" checked={f.published} onChange={(e) => set('published', e.target.checked)} />
       </div>
       <div className="modal-actions">
         {onCancel && <Button variant="secondary" onClick={onCancel}>Cancelar</Button>}

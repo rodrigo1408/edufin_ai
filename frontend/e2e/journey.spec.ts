@@ -127,7 +127,7 @@ test.describe.serial('jornada principal do estudante', () => {
     await expect(tutor.getByText(/Orçamento é um plano/)).toBeVisible()
     await tutor.getByRole('button', { name: /Dar um exemplo/ }).click()
     await expect(tutor.getByText('Exemplo prático')).toBeVisible()
-    await expect(tutor.getByText(/Exemplo: você recebe R\$ 150 de mesada/)).toBeVisible()
+    await expect(tutor.getByText(/Exemplo: você recebe R\$ 1\.500 no mês/)).toBeVisible()
     // Navegação entre aulas: coluna em telas largas, lista recolhível em notebooks/tablets/celulares
     const compactNav = page.locator('details.lesson-nav-compact')
     if (await compactNav.isVisible()) await compactNav.locator('summary').click()

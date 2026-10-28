@@ -41,7 +41,7 @@ export function LandingPage() {
               <ButtonLink to="/cadastro" variant="ai">Começar a aprender</ButtonLink>
               <a href="#trilha" className="btn btn-secondary">Ver a trilha de cursos</a>
             </div>
-            <p className="small muted" style={{ marginTop: 16 }}>Gratuito · para estudantes a partir de 12 anos · sem anúncios</p>
+            <p className="small muted" style={{ marginTop: 16 }}>Gratuito · para qualquer pessoa a partir de 12 anos · sem anúncios</p>
           </div>
 
           <figure className="ai-surface" style={{ margin: 0, padding: 20 }} aria-label="Exemplo de conversa com o tutor">
@@ -126,7 +126,7 @@ export function LandingPage() {
             <ButtonLink to="/cadastro" variant="ai">Criar conta grátis</ButtonLink>
           </div>
           <p className="small muted" style={{ marginTop: 24 }}>
-            Conteúdo educativo. Não é consultoria financeira nem recomendação de investimento. A plataforma não movimenta dinheiro real; decisões financeiras devem ser tomadas com seus responsáveis.
+            Conteúdo educativo. Não é consultoria financeira nem recomendação de investimento. A plataforma não movimenta dinheiro real; decisões financeiras reais são suas (e, para menores de idade, dos seus responsáveis).
           </p>
         </section>
         <p className="small muted" style={{ textAlign: 'center' }}>EduFin AI · Educação com Inteligência Artificial</p>

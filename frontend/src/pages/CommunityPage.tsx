@@ -28,7 +28,7 @@ export function CommunityPage() {
 
   return (
     <>
-      <PageHeader title="Comunidade" subtitle="Troque dicas e dúvidas sobre educação financeira com outros estudantes." actions={<Button onClick={() => setCreating(true)}><Plus size={16} aria-hidden /> Nova publicação</Button>} />
+      <PageHeader title="Comunidade" subtitle="Troque dicas e dúvidas sobre educação financeira com outras pessoas da comunidade." actions={<Button onClick={() => setCreating(true)}><Plus size={16} aria-hidden /> Nova publicação</Button>} />
       <Alert tone="info">
         <ShieldCheck size={18} aria-hidden />
         <span>Regras: respeito sempre; nada de dados pessoais (telefone, e-mail, documentos); sem promessas de dinheiro fácil. Viu algo errado? Use “Denunciar”.</span>

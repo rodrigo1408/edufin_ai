@@ -14,7 +14,7 @@
     <artifactId>edufin-backend</artifactId>
     <version>1.0.0</version>
     <name>EduFin Backend</name>
-    <description>Plataforma de educação financeira para adolescentes - API</description>
+    <description>Plataforma de educação financeira - API</description>
 
     <properties>
         <java.version>21</java.version>

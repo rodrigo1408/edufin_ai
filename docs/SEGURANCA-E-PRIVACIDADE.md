@@ -25,15 +25,15 @@
 - Logs sem senhas, tokens, e-mails em claro ou valores financeiros: registram apenas ids e tipos de evento.
 - Segredos somente por variáveis de ambiente; `.env` está no `.gitignore`.
 
-## LGPD e proteção de crianças e adolescentes
-Base: LGPD (Lei 13.709/2018), em especial o art. 14 (melhor interesse de crianças e adolescentes), e o ECA.
+## LGPD e proteção de menores de idade
+A plataforma é para todas as idades a partir de 12 anos; como pode ser usada por menores, segue também as regras de proteção. Base: LGPD (Lei 13.709/2018), em especial o art. 14 (melhor interesse de crianças e adolescentes), e o ECA.
 - **Minimização**: coletamos apenas e-mail, apelido e senha. Não pedimos nome completo, CPF, telefone, endereço, escola ou data de nascimento. O apelido é público; o e-mail nunca é exibido a outros usuários.
 - **Transparência e ciência do responsável**: o cadastro exige aceite dos termos e declaração de idade mínima (12 anos) e de ciência do(a) responsável para menores de 18 anos.
   - **Pendência jurídica:** para crianças (menores de 12 anos) a LGPD exige consentimento específico de um dos pais. A plataforma não oferece fluxo verificável de consentimento parental, por isso não se destina a menores de 12 anos. Os textos dos termos e da política de privacidade devem ser redigidos/revisados por profissional jurídico antes da publicação.
 - **Direitos do titular**: acesso/portabilidade (`GET /api/me/export`), correção (perfil), eliminação (`DELETE /api/me` — remoção em cascata; feedbacks permanecem anonimizados).
 - **Não exposição financeira**: dados financeiros são privados; nada é publicado automaticamente; a gamificação não usa valores monetários e não há ranking.
 - **Retenção**: histórico de atividades (padrão 365 dias), notificações lidas (180 dias) e tokens expirados são apagados por job diário. O assistente não armazena conversas.
-- **Comunidade segura para adolescentes**: bloqueio automático de telefone, e-mail e CPF (reduz aliciamento e exposição), filtro de termos ofensivos e de promessas de "dinheiro fácil", limite de links, denúncia com ocultação automática após 3 denúncias, moderação por papel dedicado e notificação ao autor quando o conteúdo é moderado.
+- **Comunidade segura (inclusive para menores de idade)**: bloqueio automático de telefone, e-mail e CPF (reduz aliciamento e exposição), filtro de termos ofensivos e de promessas de "dinheiro fácil", limite de links, denúncia com ocultação automática após 3 denúncias, moderação por papel dedicado e notificação ao autor quando o conteúdo é moderado.
 
 ## Riscos residuais e recomendações para produção
 - Ativar HTTPS (proxy reverso) e `COOKIE_SECURE=true`; configurar `server.forward-headers-strategy` se houver proxy, para o rate limit usar o IP real.

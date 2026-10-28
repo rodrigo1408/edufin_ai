@@ -121,3 +121,16 @@ recusar cadastros com `Check constraint invalid` (23514) após horas de uso.
 - O tutor não guarda histórico de conversa entre visitas (decisão de privacidade).
 - A causa raiz do erro do H2 2.4.240 não foi isolada; a mitigação é a fixação de versão (PostgreSQL não é afetado).
 - Testes em PostgreSQL real seguem dependentes de Docker em execução.
+
+---
+
+# Público para todas as idades (28/10/2026)
+
+A plataforma deixou de ser voltada só para adolescentes e passou a atender qualquer pessoa a partir de 12 anos.
+- Textos de aulas, quizzes e do tutor ficaram neutros (renda = salário, mesada ou bicos; exemplos de trabalho e
+  estudo). Orientações para menores de idade foram mantidas como condicionais ("se você for menor de idade…").
+- Categoria `ALLOWANCE` exibida como "Salário ou mesada"; página inicial, comunidade, README e documento de
+  segurança atualizados. A idade mínima de 12 anos e a ciência do responsável para menores seguem no cadastro (LGPD).
+- Migração `V3__AudienceNeutralContent` aplica os textos novos em bancos já existentes (aplicada com sucesso no H2 local).
+- Validação: backend 119 testes (0 falhas, 1 ignorado — PostgreSQL/Docker), frontend 34/34, tsc e oxlint limpos,
+  Playwright 14/14 contra a aplicação reconstruída.

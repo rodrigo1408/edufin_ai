@@ -1,6 +1,6 @@
 # EduFin AI — Educação com Inteligência Artificial
 
-Plataforma de educação financeira para adolescentes.
+Plataforma de educação financeira para todas as idades.
 
 Aplicação web completa para ensinar finanças pessoais: metas financeiras, registro de
 receitas e despesas, calculadora de juros, cursos progressivos, quizzes com correção no servidor,
