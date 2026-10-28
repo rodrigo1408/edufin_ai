@@ -66,9 +66,21 @@ describe('painel', () => {
   it('mostra estados vazios com orientações para novos usuários', async () => {
     server.use(http.get('/api/dashboard', () => HttpResponse.json(emptyDashboard())))
     renderApp('/painel')
-    expect(await screen.findByText('Nenhuma meta ativa')).toBeInTheDocument()
-    expect(screen.getByText('Sem movimentações ainda')).toBeInTheDocument()
+    // Aprendizado primeiro: novo aluno é convidado a começar a trilha e a usar o tutor.
+    expect(await screen.findByText('Sua primeira aula leva menos de 10 minutos')).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Perguntar ao tutor' })).toHaveAttribute('href', '/assistente')
     expect(screen.getByText('Nenhum quiz feito')).toBeInTheDocument()
+    expect(screen.getByText('Sem movimentações ainda')).toBeInTheDocument()
+    expect(screen.getByText(/Nenhuma meta ativa/)).toBeInTheDocument()
+  })
+
+  it('destaca o curso em andamento com acesso direto à próxima aula', async () => {
+    const d = emptyDashboard()
+    d.learning = { enrolled: 1, completed: 0, inProgress: [{ courseId: 1, title: 'Juros e inflação', category: 'INTEREST', progressPercent: 50, completedLessons: 2, lessonCount: 4, nextLessonId: 33, enrolledAt: '2026-10-01T00:00:00Z', completedAt: null }] } as never
+    server.use(http.get('/api/dashboard', () => HttpResponse.json(d)))
+    renderApp('/painel')
+    expect(await screen.findByRole('heading', { name: 'Juros e inflação' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /Continuar aula/ })).toHaveAttribute('href', '/aulas/33')
   })
 
   it('exibe erro de comunicação com opção de tentar novamente', async () => {
@@ -83,7 +95,7 @@ describe('painel', () => {
     renderApp('/painel')
     expect(await screen.findByRole('alert')).toHaveTextContent('Ocorreu um erro inesperado.')
     await user.click(screen.getByRole('button', { name: 'Tentar novamente' }))
-    expect(await screen.findByText('Nenhuma meta ativa')).toBeInTheDocument()
+    expect(await screen.findByText('Sua primeira aula leva menos de 10 minutos')).toBeInTheDocument()
   })
 })
 
@@ -181,7 +193,79 @@ describe('quiz', () => {
     expect(answerBody).toEqual({ questionId: 1, optionId: 12 })
     expect(screen.getByRole('button', { name: 'Próxima pergunta' })).toBeInTheDocument()
   })
+
+  it('pede uma dica ao tutor antes de responder, sem marcar alternativa', async () => {
+    server.use(
+      http.post('/api/quizzes/3/attempts', () => HttpResponse.json(attempt)),
+      http.post('/api/chatbot/hint/question/1', () => HttpResponse.json(tutorReply('Vou te ajudar sem entregar a resposta. Esta pergunta é sobre juros.'))),
+    )
+    const user = userEvent.setup()
+    renderApp('/quizzes/3')
+    await user.click(await screen.findByRole('button', { name: /Pedir dica ao tutor/ }))
+    expect(await screen.findByText(/sem entregar a resposta/)).toBeInTheDocument()
+    expect(screen.queryByText('(alternativa correta)')).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /Pedir dica ao tutor/ })).not.toBeInTheDocument()
+  })
 })
+
+describe('tutor', () => {
+  it('responde, oferece outra explicação e um exemplo usando a resposta anterior', async () => {
+    const bodies: Record<string, unknown>[] = []
+    server.use(
+      http.get('/api/courses/mine', () => HttpResponse.json([])),
+      http.get('/api/chatbot/info', () => HttpResponse.json({ disclaimer: 'Tutor com explicações curadas.', source: 'LOCAL_KNOWLEDGE_BASE', generativeModel: false, suggestions: ['O que é inflação?'] })),
+      http.post('/api/chatbot/ask', async ({ request }) => {
+        const body = (await request.json()) as Record<string, unknown>
+        bodies.push(body)
+        if (body.mode === 'ALTERNATIVE') return HttpResponse.json({ ...tutorReply('É como se o dinheiro encolhesse.'), mode: 'ALTERNATIVE' })
+        return HttpResponse.json(tutorReply('Inflação é o aumento geral dos preços.'))
+      }),
+    )
+    const user = userEvent.setup()
+    renderApp('/assistente')
+    await user.click(await screen.findByRole('button', { name: /O que é inflação\?/ }))
+    expect(await screen.findByText('Inflação é o aumento geral dos preços.')).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: /Explicar de outro jeito/ }))
+    expect(await screen.findByText('É como se o dinheiro encolhesse.')).toBeInTheDocument()
+    expect(screen.getByText('Explicação alternativa')).toBeInTheDocument()
+    expect(bodies[1]).toMatchObject({ mode: 'ALTERNATIVE', entryId: 'inflation-01' })
+  })
+
+  it('informa indisponibilidade quando o limite de uso é atingido', async () => {
+    server.use(
+      http.get('/api/courses/mine', () => HttpResponse.json([])),
+      http.get('/api/chatbot/info', () => HttpResponse.json({ disclaimer: 'x', source: 'LOCAL_KNOWLEDGE_BASE', generativeModel: false, suggestions: [] })),
+      http.post('/api/chatbot/ask', () => HttpResponse.json({ code: 'RATE_LIMITED', message: 'Muitas tentativas em pouco tempo.' }, { status: 429 })),
+    )
+    const user = userEvent.setup()
+    renderApp('/assistente')
+    await user.type(await screen.findByLabelText('Sua pergunta'), 'o que é juros?')
+    await user.click(screen.getByRole('button', { name: 'Enviar pergunta' }))
+    expect(await screen.findByText(/Tutor temporariamente indisponível/)).toBeInTheDocument()
+  })
+})
+
+describe('catálogo', () => {
+  it('pesquisa cursos pelo título e mostra estado vazio com opção de limpar', async () => {
+    const course = (id: number, title: string) => ({ id, slug: 's' + id, title, summary: 'Resumo', category: 'BUDGET', categoryLabel: 'Orçamento pessoal', difficulty: 'BEGINNER', estimatedMinutes: 30, position: id, lessonCount: 4, averageRating: null, reviewCount: 0, enrolled: false, completed: false, completedLessons: 0, progressPercent: 0 })
+    server.use(http.get('/api/courses', () => HttpResponse.json([course(1, 'Primeiros passos com o dinheiro'), course(4, 'Juros e inflação')])))
+    const user = userEvent.setup()
+    renderApp('/cursos')
+    expect(await screen.findByRole('link', { name: 'Juros e inflação' })).toBeInTheDocument()
+    expect(screen.getByText('Etapa 4')).toBeInTheDocument()
+    await user.type(screen.getByLabelText('Pesquisar cursos'), 'juros')
+    expect(screen.queryByRole('link', { name: 'Primeiros passos com o dinheiro' })).not.toBeInTheDocument()
+    await user.clear(screen.getByLabelText('Pesquisar cursos'))
+    await user.type(screen.getByLabelText('Pesquisar cursos'), 'xyz')
+    expect(screen.getByText('Nenhum curso encontrado para "xyz"')).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Limpar filtros' }))
+    expect(screen.getByRole('link', { name: 'Juros e inflação' })).toBeInTheDocument()
+  })
+})
+
+function tutorReply(answer: string) {
+  return { answer, topic: 'INFLATION', matched: true, links: [], suggestions: [], source: 'LOCAL_KNOWLEDGE_BASE', disclaimer: 'x', entryId: 'inflation-01', mode: 'ASK', canRephrase: true, canGiveExample: true, context: null }
+}
 
 describe('calculadora', () => {
   it('envia os parâmetros ao servidor e exibe o resultado', async () => {

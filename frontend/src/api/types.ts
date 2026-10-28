@@ -439,6 +439,16 @@ export interface ChatLink {
   path: string
 }
 
+export type TutorMode = 'ASK' | 'ALTERNATIVE' | 'EXAMPLE'
+
+export interface TutorContext {
+  kind: 'LESSON' | 'QUESTION'
+  id: number
+  title: string
+  topic: Topic
+  topicLabel: string
+}
+
 export interface ChatResponse {
   answer: string
   topic: string | null
@@ -447,6 +457,30 @@ export interface ChatResponse {
   suggestions: string[]
   source: string
   disclaimer: string
+  entryId: string | null
+  mode: TutorMode
+  canRephrase: boolean
+  canGiveExample: boolean
+  context: TutorContext | null
+}
+
+export interface TutorInfo {
+  disclaimer: string
+  source: string
+  generativeModel: boolean
+  suggestions: string[]
+  context?: TutorContext
+}
+
+export interface PublicCourse {
+  id: number
+  title: string
+  summary: string
+  category: Topic
+  categoryLabel: string
+  difficulty: Difficulty
+  estimatedMinutes: number
+  lessonCount: number
 }
 
 export type ForumCategory = 'QUESTIONS' | 'TIPS' | 'GOALS' | 'STUDIES' | 'INVESTING' | 'PLATFORM'

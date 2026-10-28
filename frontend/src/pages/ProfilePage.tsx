@@ -88,7 +88,7 @@ function PreferencesForm({ prefs }: { prefs: Preferences }) {
   return (
     <Card title="Preferências">
       <form className="stack" onSubmit={submit} noValidate>
-        <SelectField label="Tema" value={p.theme} onChange={(e) => set('theme', e.target.value as Theme)} options={[{ value: 'SYSTEM', label: 'Igual ao sistema' }, { value: 'LIGHT', label: 'Claro' }, { value: 'DARK', label: 'Escuro' }]} />
+        <SelectField label="Tema" value={p.theme} onChange={(e) => set('theme', e.target.value as Theme)} options={[{ value: 'SYSTEM', label: 'Padrão EduFin AI (escuro)' }, { value: 'DARK', label: 'Escuro' }, { value: 'LIGHT', label: 'Claro' }]} />
         <TextField label="Meta semanal de aulas" type="number" min={1} max={50} value={p.weeklyLessonTarget} onChange={(e) => set('weeklyLessonTarget', Number(e.target.value))} />
         <fieldset className="stack" style={{ border: 0, padding: 0, margin: 0, gap: 8 }}>
           <legend className="label" style={{ fontWeight: 600, marginBottom: 6 }}>Notificações internas</legend>

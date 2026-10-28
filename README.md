@@ -1,8 +1,10 @@
-# EduFin — Plataforma de educação financeira para adolescentes
+# EduFin AI — Educação com Inteligência Artificial
+
+Plataforma de educação financeira para adolescentes.
 
 Aplicação web completa para ensinar finanças pessoais a adolescentes: metas financeiras, registro de
 receitas e despesas, calculadora de juros, cursos progressivos, quizzes com correção no servidor,
-gamificação saudável, notificações internas, relatórios, assistente educativo, comunidade moderada,
+gamificação saudável, notificações internas, relatórios, **tutor educativo integrado às aulas e aos quizzes**, comunidade moderada,
 carteiras de investimento **simuladas** e canal de feedback — com área administrativa por permissões.
 
 > Conteúdo educativo. A plataforma **não** movimenta dinheiro real, não se conecta a bancos e não faz
@@ -30,7 +32,7 @@ carteiras de investimento **simuladas** e canal de feedback — com área admini
 | Framework | Spring Boot (Web MVC, Data JPA, Security, Validation, Actuator, Mail) | **4.1.2** |
 | ORM | Hibernate | 7 (gerenciado pelo Boot) |
 | Banco (produção) | PostgreSQL | **17** |
-| Banco (testes / perfil `local`) | H2 em modo PostgreSQL | 2.x |
+| Banco (testes / perfil `local`) | H2 em modo PostgreSQL | 2.3.232 (versão verificada pelo Flyway) |
 | Migrações | Flyway | gerenciado pelo Boot |
 | Documentação da API | springdoc-openapi | 3.2.0 |
 | Frontend | React + TypeScript + Vite | React 19, TS 7, Vite 8 |
@@ -40,6 +42,7 @@ carteiras de investimento **simuladas** e canal de feedback — com área admini
 | Testes backend | JUnit 5, Spring Test/MockMvc, Testcontainers | gerenciados pelo Boot |
 | Testes frontend | Vitest, Testing Library, MSW | Vitest 4 |
 | Testes E2E | Playwright | 1.56 |
+| Tipografia | Inter Variable (auto-hospedada) | @fontsource-variable/inter |
 
 Justificativas detalhadas em [docs/ARQUITETURA.md](docs/ARQUITETURA.md).
 
@@ -189,7 +192,7 @@ variáveis de ambiente.
   o sistema informa a indisponibilidade e um administrador pode gerar um **link de uso único** (30 min).
   O envio SMTP real não foi validado neste ambiente (sem servidor de e-mail).
 - **Notificações** são internas à plataforma (sem e-mail/push).
-- **Assistente** usa base de conhecimento local (respostas curadas); não há LLM integrado. A interface
+- **Tutor IA**: usa uma base de explicações curadas (resposta principal, explicação alternativa e exemplo por tema), considera o tema da aula em estudo e dá dicas conceituais nos quizzes sem revelar a resposta. **Não há modelo de IA generativa integrado**; a interface informa isso ao aluno. A interface
   `ChatbotProvider` permite plugar um provedor externo.
 - **Carteiras simuladas** não usam cotações reais (por decisão; nenhum provedor configurado).
 - **Sessões e rate limit em memória**: adequados para uma instância. Para escalar horizontalmente,
@@ -200,6 +203,7 @@ variáveis de ambiente.
 ## Documentos complementares
 
 - [docs/ARQUITETURA.md](docs/ARQUITETURA.md) — decisões (ADRs) e organização
+- [docs/DESIGN.md](docs/DESIGN.md) — identidade visual, tokens e componentes
 - [docs/API.md](docs/API.md) — endpoints, regras e exemplos
 - [docs/SEGURANCA-E-PRIVACIDADE.md](docs/SEGURANCA-E-PRIVACIDADE.md) — segurança, LGPD e proteção de menores
 - [docs/OPERACAO.md](docs/OPERACAO.md) — implantação, backup, retenção e monitoramento

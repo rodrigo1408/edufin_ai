@@ -1,13 +1,13 @@
 import { useState, type FormEvent } from 'react'
 import { Link, useNavigate, useParams } from 'react-router'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { ArrowLeft, Flag, Heart, Pencil, Trash2 } from 'lucide-react'
+import { Flag, Heart, Pencil, Trash2 } from 'lucide-react'
 import { api, errorMessage } from '../api/client'
 import type { CommentView, Page, PostDetail } from '../api/types'
 import { SelectField, TextAreaField } from '../components/form'
 import { ConfirmDialog, Modal } from '../components/Modal'
 import { useToast } from '../components/Toast'
-import { Alert, Badge, Button, Card, ErrorState, Spinner } from '../components/ui'
+import { BackLink, Alert, Badge, Button, Card, ErrorState, Spinner } from '../components/ui'
 import { relativeTime } from '../utils/format'
 import { forumCategoryLabel, options, reportReasonLabel } from '../utils/labels'
 import { PostForm } from './CommunityPage'
@@ -46,7 +46,7 @@ export function PostPage() {
 
   return (
     <>
-      <Link to="/comunidade" className="btn btn-ghost btn-sm" style={{ marginBottom: 8 }}><ArrowLeft size={14} aria-hidden /> Comunidade</Link>
+      <BackLink to="/comunidade">Comunidade</BackLink>
       <article className="card stack">
         <div className="row small muted">
           <Badge tone="primary">{forumCategoryLabel[p.post.category]}</Badge>

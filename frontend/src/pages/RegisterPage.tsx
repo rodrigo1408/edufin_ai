@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router'
 import { ApiError, errorMessage } from '../api/client'
 import { useAuth } from '../auth/AuthContext'
 import { Checkbox, TextField } from '../components/form'
-import { Logo } from '../components/Logo'
+import { AuthLayout } from '../components/AuthLayout'
 import { Alert, Button } from '../components/ui'
 import { validateRegister, hasErrors, type Errors } from '../utils/validation'
 
@@ -38,9 +38,7 @@ export function RegisterPage() {
   }
 
   return (
-    <div className="auth-page">
-      <div className="auth-card stack">
-        <Logo to="/" />
+    <AuthLayout>
         <div className="card">
           <h1>Criar conta</h1>
           <p className="muted small">Pedimos só o essencial. Seus registros financeiros ficam visíveis apenas para você.</p>
@@ -75,7 +73,6 @@ export function RegisterPage() {
         <p className="small muted" style={{ textAlign: 'center' }}>
           Já tem conta? <Link to="/entrar">Entrar</Link>
         </p>
-      </div>
-    </div>
+    </AuthLayout>
   )
 }

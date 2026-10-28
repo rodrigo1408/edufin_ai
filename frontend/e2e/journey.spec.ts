@@ -85,7 +85,7 @@ test.describe.serial('jornada principal do estudante', () => {
   })
 
   test('5. dashboard reflete os dados persistidos', async () => {
-    await page.getByRole('link', { name: 'Painel' }).click()
+    await page.getByRole('link', { name: 'Início', exact: true }).click()
     await expect(page.getByText('Guardado nas metas')).toBeVisible()
     await expect(page.getByText('R$ 200,00').first()).toBeVisible()
     await expect(page.getByText('R$ 274,50').first()).toBeVisible()
@@ -96,6 +96,10 @@ test.describe.serial('jornada principal do estudante', () => {
     await page.getByRole('link', { name: 'Quizzes' }).click()
     await page.getByRole('link', { name: /Começar/ }).first().click()
     const total = Number((await page.getByText(/Pergunta 1 de \d+/).textContent())!.match(/de (\d+)/)![1])
+    // Dica do tutor antes de responder: explica o conceito sem revelar a alternativa correta
+    await page.getByRole('button', { name: /Pedir dica ao tutor/ }).click()
+    await expect(page.getByText(/sem entregar a resposta/)).toBeVisible()
+    await expect(page.locator('.option.correct')).toHaveCount(0)
     for (let i = 0; i < total; i++) {
       await page.getByRole('radio').first().click()
       await page.getByRole('button', { name: 'Responder' }).click()
@@ -109,12 +113,25 @@ test.describe.serial('jornada principal do estudante', () => {
   })
 
   test('7. inscrição e progresso em um curso', async () => {
-    await page.getByRole('link', { name: 'Cursos' }).click()
+    await page.getByRole('link', { name: 'Cursos e trilha' }).click()
     await page.getByRole('link', { name: 'Primeiros passos com o dinheiro' }).click()
     await page.getByRole('button', { name: 'Inscrever-se gratuitamente' }).click()
     await expect(page.getByText('Inscrição feita! Bons estudos.')).toBeVisible()
     await page.getByRole('link', { name: 'Começar a primeira aula' }).click()
     await expect(page.getByRole('heading', { name: 'Para que serve o dinheiro' })).toBeVisible()
+    // Tutor contextual da aula: pergunta, depois pede um exemplo da mesma explicação
+    const tutor = page.getByRole('complementary', { name: 'Tutor da aula' })
+    await expect(tutor.getByText('Contexto')).toBeVisible()
+    await tutor.getByLabel('Sua pergunta').fill('como organizar meu orçamento?')
+    await tutor.getByRole('button', { name: 'Enviar pergunta' }).click()
+    await expect(tutor.getByText(/Orçamento é um plano/)).toBeVisible()
+    await tutor.getByRole('button', { name: /Dar um exemplo/ }).click()
+    await expect(tutor.getByText('Exemplo prático')).toBeVisible()
+    await expect(tutor.getByText(/Exemplo: você recebe R\$ 150 de mesada/)).toBeVisible()
+    // Navegação entre aulas: coluna em telas largas, lista recolhível em notebooks/tablets/celulares
+    const compactNav = page.locator('details.lesson-nav-compact')
+    if (await compactNav.isVisible()) await compactNav.locator('summary').click()
+    await expect(page.getByRole('navigation', { name: 'Módulos e aulas do curso' }).getByRole('link', { name: 'Necessidades x desejos' })).toBeVisible()
     await page.getByLabel('Anotações privadas').fill('Pague-se primeiro!')
     await page.getByRole('button', { name: 'Salvar anotação' }).click()
     await expect(page.getByText('Anotação salva.')).toBeVisible()
@@ -174,7 +191,7 @@ test.describe.serial('jornada principal do estudante', () => {
     await page.getByRole('link', { name: 'Notificações' }).first().click()
     await expect(page.getByRole('heading', { name: 'Notificações' })).toBeVisible()
     await expect(page.getByText('Meta alcançada! 🎉')).toBeVisible()
-    await expect(page.getByText('Boas-vindas ao EduFin!')).toBeVisible()
+    await expect(page.getByText('Boas-vindas ao EduFin AI!')).toBeVisible()
     await page.getByRole('button', { name: 'Marcar todas como lidas' }).click()
     await expect(page.getByText('Todas marcadas como lidas.')).toBeVisible()
     await page.getByRole('tab', { name: 'Não lidas' }).click()
@@ -182,7 +199,7 @@ test.describe.serial('jornada principal do estudante', () => {
   })
 
   test('12. assistente educativo e carteira simulada', async () => {
-    await page.getByRole('link', { name: 'Assistente' }).click()
+    await page.getByRole('link', { name: 'Tutor IA', exact: true }).click()
     await page.getByLabel('Sua pergunta').fill('o que é inflação?')
     await page.getByRole('button', { name: 'Enviar pergunta' }).click()
     await expect(page.getByText(/aumento geral dos preços/)).toBeVisible()

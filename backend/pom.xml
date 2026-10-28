@@ -19,6 +19,8 @@
     <properties>
         <java.version>21</java.version>
         <springdoc.version>3.2.0</springdoc.version>
+        <!-- H2 fixado na versão verificada pelo Flyway (2.4.240 apresentou "Check constraint invalid" em uso prolongado) -->
+        <h2.version>2.3.232</h2.version>
     </properties>
 
     <dependencies>

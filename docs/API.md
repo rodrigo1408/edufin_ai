@@ -1,4 +1,4 @@
-# API — EduFin
+# API — EduFin AI
 
 A especificação OpenAPI completa é gerada pela aplicação em `GET /api/docs` (interface em `/api/docs/ui`).
 Este guia resume os grupos de endpoints, as regras e o formato de erros.
@@ -84,7 +84,10 @@ Este guia resume os grupos de endpoints, as regras e o formato de erros.
 | POST | `/api/quiz-attempts/{id}/finish` | nota calculada no servidor + recomendações |
 | GET | `/api/quiz-attempts/{id}` · `/result` · `/history` | tentativa / resultado / histórico |
 | GET | `/api/gamification/summary` · `/history` | pontos, nível, sequência, conquistas, desafios |
-| POST | `/api/chatbot/ask` · GET `/api/chatbot/info` | assistente educativo |
+| POST | `/api/chatbot/ask` | tutor: `{ message, mode: ASK\|ALTERNATIVE\|EXAMPLE, entryId, lessonId }` |
+| POST | `/api/chatbot/hint/question/{id}` | dica conceitual para pergunta de quiz (nunca revela a alternativa correta) |
+| GET | `/api/chatbot/info?lessonId=` | aviso, fonte, `generativeModel: false`, sugestões e contexto da aula |
+| GET | `/api/public/courses` | trilha publicada (sem login; apenas resumos) |
 
 ### Comunidade, notificações e feedback
 | Método | Caminho | Descrição |

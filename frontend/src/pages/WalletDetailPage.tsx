@@ -1,14 +1,14 @@
 import { useState, type FormEvent } from 'react'
-import { Link, useNavigate, useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { Archive, ArrowLeft, Pencil, Trash2 } from 'lucide-react'
+import { Archive, Pencil, Trash2 } from 'lucide-react'
 import { api, errorMessage } from '../api/client'
 import type { Page, ScenarioResponse, WalletDetail, WalletMovement } from '../api/types'
 import { ScenarioChart, SimpleLine } from '../components/charts'
 import { SelectField, TextField } from '../components/form'
 import { ConfirmDialog, Modal } from '../components/Modal'
 import { useToast } from '../components/Toast'
-import { Alert, Badge, Button, Card, ErrorState, PageHeader, Pagination, Spinner, Stat } from '../components/ui'
+import { BackLink, Alert, Badge, Button, Card, ErrorState, PageHeader, Pagination, Spinner, Stat } from '../components/ui'
 import { date, money, parseAmount, percent, todayIso } from '../utils/format'
 import { walletMovementLabel } from '../utils/labels'
 import { WalletForm } from './WalletsPage'
@@ -54,7 +54,7 @@ export function WalletDetailPage() {
 
   return (
     <>
-      <Link to="/carteiras" className="btn btn-ghost btn-sm" style={{ marginBottom: 8 }}><ArrowLeft size={14} aria-hidden /> Carteiras</Link>
+      <BackLink to="/carteiras">Carteiras</BackLink>
       <PageHeader
         title={w.name}
         subtitle={w.description ?? `Taxa hipotética: ${percent(w.assumedAnnualRate)} ao ano`}

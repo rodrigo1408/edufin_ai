@@ -1,12 +1,12 @@
 import { useState, type FormEvent } from 'react'
 import { Link, useParams } from 'react-router'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { ArrowLeft, CheckCircle2, Circle, HelpCircle, Star } from 'lucide-react'
+import { CheckCircle2, Circle, HelpCircle, Star } from 'lucide-react'
 import { api, errorMessage } from '../api/client'
 import type { CourseDetail, Page, ReviewView } from '../api/types'
 import { TextAreaField } from '../components/form'
 import { useToast } from '../components/Toast'
-import { Alert, Badge, Button, ButtonLink, Card, ErrorState, PageHeader, ProgressBar, Spinner } from '../components/ui'
+import { BackLink, Stars, Alert, Badge, Button, ButtonLink, Card, ErrorState, PageHeader, ProgressBar, Spinner } from '../components/ui'
 import { date } from '../utils/format'
 import { difficultyLabel } from '../utils/labels'
 
@@ -34,7 +34,7 @@ export function CourseDetailPage() {
 
   return (
     <>
-      <Link to="/cursos" className="btn btn-ghost btn-sm" style={{ marginBottom: 8 }}><ArrowLeft size={14} aria-hidden /> Cursos</Link>
+      <BackLink to="/cursos">Cursos</BackLink>
       <PageHeader
         title={c.title}
         subtitle={c.summary}
@@ -94,7 +94,7 @@ export function CourseDetailPage() {
           <ul className="list">
             {reviews.data?.content.map((r) => (
               <li key={r.id}>
-                <div className="row-between"><strong>{r.author}</strong><span aria-label={`${r.rating} de 5 estrelas`}>{'★'.repeat(r.rating)}{'☆'.repeat(5 - r.rating)}</span></div>
+                <div className="row-between"><strong>{r.author}</strong><Stars value={r.rating} /></div>
                 {r.comment && <p className="small" style={{ margin: '4px 0 0' }}>{r.comment}</p>}
               </li>
             ))}

@@ -1,205 +1,603 @@
 [
   {
-    "id": "budget-01", "topic": "BUDGET",
-    "keywords": ["orcamento", "organizar dinheiro", "controlar gastos", "planejar", "planejamento", "mesada"],
+    "id": "budget-01",
+    "topic": "BUDGET",
+    "keywords": [
+      "orcamento",
+      "organizar dinheiro",
+      "controlar gastos",
+      "planejar",
+      "planejamento",
+      "mesada"
+    ],
     "question": "Como organizar meu orçamento?",
     "answer": "Orçamento é um plano para o seu dinheiro. Um jeito simples: 1) anote quanto você recebe no mês (mesada, bicos, presentes); 2) liste seus gastos fixos (ex.: transporte, lanche) e os variáveis (lazer, jogos); 3) defina quanto vai guardar ANTES de gastar; 4) acompanhe semanalmente. Uma regra de referência é a 50-30-20: 50% para o essencial, 30% para desejos e 20% para guardar — mas adapte à sua realidade. Aqui na plataforma, use a área de Transações para registrar tudo e ver o resumo do mês.",
-    "links": [{"label": "Registrar transações", "path": "/transacoes"}, {"label": "Curso: Primeiros passos com o dinheiro", "path": "/cursos"}]
+    "links": [
+      {
+        "label": "Registrar transações",
+        "path": "/transacoes"
+      },
+      {
+        "label": "Curso: Primeiros passos com o dinheiro",
+        "path": "/cursos"
+      }
+    ],
+    "alternative": "Pense no orçamento como o mapa de uma viagem: antes de sair, você decide quanto vai gastar com transporte, comida e diversão. Sem o mapa, o dinheiro acaba no meio do caminho. O orçamento é só isso: decidir o destino de cada real antes de ele sumir.",
+    "example": "Exemplo: você recebe R$ 150 de mesada. Separa R$ 30 para a meta do fone assim que recebe, reserva R$ 60 para lanches da escola e R$ 40 para lazer. Sobram R$ 20 para imprevistos. No fim do mês, compara o que planejou com o que registrou nas Transações."
   },
   {
-    "id": "budget-02", "topic": "BUDGET",
-    "keywords": ["50 30 20", "regra 50", "dividir dinheiro", "porcentagem"],
+    "id": "budget-02",
+    "topic": "BUDGET",
+    "keywords": [
+      "50 30 20",
+      "regra 50",
+      "dividir dinheiro",
+      "porcentagem"
+    ],
     "question": "O que é a regra 50-30-20?",
     "answer": "É uma referência para dividir o que você recebe: 50% para necessidades (o que é essencial), 30% para desejos (lazer, coisas legais que não são essenciais) e 20% para guardar ou investir. Para adolescentes, muitas vezes o essencial já é pago pela família — então dá para guardar uma fatia maior! É um ponto de partida, não uma lei.",
-    "links": [{"label": "Transações", "path": "/transacoes"}]
+    "links": [
+      {
+        "label": "Transações",
+        "path": "/transacoes"
+      }
+    ],
+    "alternative": "Imagine sua mesada como uma pizza de 10 fatias: 5 fatias vão para o que é essencial, 3 para o que é legal mas dispensável e 2 você guarda para o futuro. A proporção ajuda a não comer a pizza inteira de uma vez.",
+    "example": "Exemplo com R$ 200: R$ 100 para necessidades (transporte, lanche), R$ 60 para desejos (cinema, jogos) e R$ 40 guardados. Se a família já paga o essencial, você pode inverter e guardar mais."
   },
   {
-    "id": "budget-03", "topic": "BUDGET",
-    "keywords": ["necessidade", "desejo", "diferenca necessidade", "preciso ou quero", "quero"],
+    "id": "budget-03",
+    "topic": "BUDGET",
+    "keywords": [
+      "necessidade",
+      "desejo",
+      "diferenca necessidade",
+      "preciso ou quero",
+      "quero"
+    ],
     "question": "Qual a diferença entre necessidade e desejo?",
     "answer": "Necessidade é o que você precisa para viver e estudar (alimentação, transporte para a escola, material). Desejo é o que seria bom ter, mas dá para esperar ou viver sem (o tênis novo, a skin do jogo). Desejos não são proibidos! A ideia é escolher conscientemente e planejar para eles — muitas vezes transformando um desejo em uma meta.",
-    "links": [{"label": "Criar uma meta", "path": "/metas"}]
+    "links": [
+      {
+        "label": "Criar uma meta",
+        "path": "/metas"
+      }
+    ],
+    "alternative": "Uma pergunta simples ajuda: \"se eu não comprar isso hoje, o que acontece?\". Se a resposta for \"nada de grave\", provavelmente é um desejo — e pode virar uma meta.",
+    "example": "Exemplo: o tênis do uniforme rasgou e você precisa ir à escola — necessidade. O tênis edição limitada que todo mundo está usando, quando o seu ainda está bom — desejo. Os dois são válidos, mas o segundo pode esperar e ser planejado."
   },
   {
-    "id": "saving-01", "topic": "SAVING",
-    "keywords": ["poupar", "guardar dinheiro", "economizar", "juntar dinheiro", "economia"],
+    "id": "saving-01",
+    "topic": "SAVING",
+    "keywords": [
+      "poupar",
+      "guardar dinheiro",
+      "economizar",
+      "juntar dinheiro",
+      "economia"
+    ],
     "question": "Como começar a guardar dinheiro?",
     "answer": "Comece pequeno e com constância: separe uma parte assim que receber (\"pague-se primeiro\"), mesmo que seja pouco. Tenha um objetivo claro — uma meta com valor e prazo ajuda muito. Corte pequenos gastos repetidos que você nem percebe (lanchinhos, microtransações). E acompanhe o progresso: ver a barra subir motiva! Aqui você pode criar metas e registrar cada contribuição.",
-    "links": [{"label": "Minhas metas", "path": "/metas"}]
+    "links": [
+      {
+        "label": "Minhas metas",
+        "path": "/metas"
+      }
+    ],
+    "alternative": "Poupar é como plantar: você abre mão de comer a semente hoje para colher mais depois. Começar com pouco não é problema — o importante é plantar sempre.",
+    "example": "Exemplo: guardar R$ 5 por dia dá cerca de R$ 150 por mês e R$ 1.800 em um ano. Na plataforma, crie uma meta e registre cada contribuição para ver a barra de progresso crescer."
   },
   {
-    "id": "saving-02", "topic": "SAVING",
-    "keywords": ["reserva de emergencia", "emergencia", "imprevisto", "reserva"],
+    "id": "saving-02",
+    "topic": "SAVING",
+    "keywords": [
+      "reserva de emergencia",
+      "emergencia",
+      "imprevisto",
+      "reserva"
+    ],
     "question": "O que é reserva de emergência?",
     "answer": "É um dinheiro guardado só para imprevistos: o celular que quebrou, um gasto inesperado. Para adultos, costuma-se recomendar de 3 a 6 meses de gastos essenciais. Para você, pode começar com um valor menor, como o equivalente a um ou dois meses de mesada. Ela deve ficar em um lugar seguro e fácil de resgatar — e não é para gastar com desejos!",
-    "links": [{"label": "Criar meta de reserva", "path": "/metas"}]
+    "links": [
+      {
+        "label": "Criar meta de reserva",
+        "path": "/metas"
+      }
+    ],
+    "alternative": "A reserva de emergência é o \"airbag\" do seu dinheiro: você espera nunca precisar, mas quando acontece um imprevisto ela evita que você se machuque (ou se endivide).",
+    "example": "Exemplo: a tela do celular quebrou e o conserto custa R$ 180. Com uma reserva de R$ 200, você paga sem pegar dinheiro emprestado e depois volta a completar a reserva aos poucos."
   },
   {
-    "id": "goals-01", "topic": "GOALS",
-    "keywords": ["meta", "metas", "objetivo", "sonho", "meta financeira"],
+    "id": "goals-01",
+    "topic": "GOALS",
+    "keywords": [
+      "meta",
+      "metas",
+      "objetivo",
+      "sonho",
+      "meta financeira"
+    ],
     "question": "Como definir uma boa meta financeira?",
     "answer": "Uma boa meta é específica (o quê?), tem valor definido (quanto?) e prazo (até quando?). Exemplo: \"juntar R$ 600 para um fone até dezembro\". Divida o valor pelo número de meses e você saberá quanto guardar por mês. Na plataforma, ao criar uma meta com prazo, mostramos uma sugestão de valor mensal para chegar lá.",
-    "links": [{"label": "Criar meta", "path": "/metas"}]
+    "links": [
+      {
+        "label": "Criar meta",
+        "path": "/metas"
+      }
+    ],
+    "alternative": "Uma meta boa responde três perguntas: o quê, quanto e até quando. Sem essas respostas, ela vira só um desejo vago.",
+    "example": "Exemplo: \"quero um fone\" vira \"juntar R$ 600 para um fone até dezembro\". Faltando 6 meses, são R$ 100 por mês. Se ficar pesado, você aumenta o prazo ou escolhe um modelo mais barato."
   },
   {
-    "id": "interest-01", "topic": "INTEREST",
-    "keywords": ["juros", "o que sao juros", "taxa de juros"],
+    "id": "interest-01",
+    "topic": "INTEREST",
+    "keywords": [
+      "juros",
+      "o que sao juros",
+      "taxa de juros"
+    ],
     "question": "O que são juros?",
     "answer": "Juros são o \"preço\" do dinheiro no tempo. Quando você empresta (ou investe), recebe juros como recompensa por deixar o dinheiro com alguém. Quando você pega emprestado (ou compra parcelado com juros), você paga juros. A taxa de juros indica quanto, em porcentagem, por período (ao mês ou ao ano).",
-    "links": [{"label": "Calculadora de juros", "path": "/calculadora"}]
+    "links": [
+      {
+        "label": "Calculadora de juros",
+        "path": "/calculadora"
+      }
+    ],
+    "alternative": "Juros são como um aluguel do dinheiro: quem empresta cobra pelo tempo em que o dinheiro fica com outra pessoa. Quando você investe, é você quem \"aluga\" e recebe; quando deve, é você quem paga.",
+    "example": "Exemplo: você empresta R$ 100 para alguém e combina receber R$ 105 depois de um mês. Os R$ 5 a mais são os juros, e a taxa foi de 5% ao mês."
   },
   {
-    "id": "interest-02", "topic": "INTEREST",
-    "keywords": ["juros simples", "simples"],
+    "id": "interest-02",
+    "topic": "INTEREST",
+    "keywords": [
+      "juros simples",
+      "simples"
+    ],
     "question": "Como funcionam os juros simples?",
     "answer": "Nos juros simples, o rendimento é calculado sempre sobre o valor inicial. Fórmula: Montante = Capital × (1 + taxa × tempo). Exemplo: R$ 100 a 2% ao mês por 5 meses rende 2% de 100 = R$ 2 por mês → R$ 110 no final. Use a calculadora para comparar com os juros compostos.",
-    "links": [{"label": "Calculadora", "path": "/calculadora"}]
+    "links": [
+      {
+        "label": "Calculadora",
+        "path": "/calculadora"
+      }
+    ],
+    "alternative": "Nos juros simples, o rendimento é sempre calculado sobre o valor do começo, como uma mesada fixa que o dinheiro recebe todo mês.",
+    "example": "Exemplo: R$ 200 a 3% ao mês rendem R$ 6 por mês. Em 4 meses: 200 + 4 × 6 = R$ 224. Confira na Calculadora escolhendo \"Simples\"."
   },
   {
-    "id": "interest-03", "topic": "INTEREST",
-    "keywords": ["juros compostos", "composto", "juros sobre juros", "bola de neve"],
+    "id": "interest-03",
+    "topic": "INTEREST",
+    "keywords": [
+      "juros compostos",
+      "composto",
+      "juros sobre juros",
+      "bola de neve"
+    ],
     "question": "Como funcionam os juros compostos?",
     "answer": "Nos juros compostos, os juros de cada período passam a render também — são \"juros sobre juros\". Fórmula: Montante = Capital × (1 + taxa)^tempo. Exemplo: R$ 100 a 2% ao mês: depois de 1 mês R$ 102, depois de 2 meses R$ 104,04... Quanto mais tempo, maior a diferença em relação aos juros simples. Isso é ótimo quando você investe, e perigoso quando você está devendo!",
-    "links": [{"label": "Simular na calculadora", "path": "/calculadora"}]
+    "links": [
+      {
+        "label": "Simular na calculadora",
+        "path": "/calculadora"
+      }
+    ],
+    "alternative": "Juros compostos são uma bola de neve descendo a montanha: ela pega neve nova e também fica maior por causa da neve que já tinha. Cada mês rende sobre o total acumulado.",
+    "example": "Exemplo: R$ 1.000 a 1% ao mês. Em 12 meses vira cerca de R$ 1.126,83 — e não R$ 1.120, como seria nos juros simples. Em 10 anos, a diferença fica enorme. Compare os dois tipos na Calculadora."
   },
   {
-    "id": "inflation-01", "topic": "INFLATION",
-    "keywords": ["inflacao", "precos subindo", "poder de compra", "ipca", "tudo mais caro"],
+    "id": "inflation-01",
+    "topic": "INFLATION",
+    "keywords": [
+      "inflacao",
+      "precos subindo",
+      "poder de compra",
+      "ipca",
+      "tudo mais caro"
+    ],
     "question": "O que é inflação?",
     "answer": "Inflação é o aumento geral dos preços ao longo do tempo. Com inflação, o mesmo dinheiro compra menos coisas — é a perda do poder de compra. Se um lanche custava R$ 20 e um ano depois custa R$ 21, a inflação desse lanche foi de 5%. Por isso, dinheiro parado sem render pode \"encolher\" na prática. No Brasil, o índice oficial é o IPCA.",
-    "links": [{"label": "Curso sobre juros e inflação", "path": "/cursos"}]
+    "links": [
+      {
+        "label": "Curso sobre juros e inflação",
+        "path": "/cursos"
+      }
+    ],
+    "alternative": "Inflação é como se o seu dinheiro encolhesse devagar: a nota continua sendo de R$ 50, mas compra menos coisas a cada ano.",
+    "example": "Exemplo: com R$ 50 você comprava 10 salgados de R$ 5. Se o preço sobe para R$ 5,50, os mesmos R$ 50 compram só 9. Os preços subiram 10% e o seu poder de compra caiu."
   },
   {
-    "id": "credit-01", "topic": "CREDIT",
-    "keywords": ["cartao de credito", "credito", "fatura", "limite"],
+    "id": "credit-01",
+    "topic": "CREDIT",
+    "keywords": [
+      "cartao de credito",
+      "credito",
+      "fatura",
+      "limite"
+    ],
     "question": "Como funciona o cartão de crédito?",
     "answer": "O cartão de crédito permite comprar agora e pagar depois, na fatura do mês seguinte. Não é dinheiro extra: é um empréstimo de curto prazo. Se a fatura não for paga inteira, entram juros rotativos, que estão entre os mais altos do mercado. Regra de ouro: só use o cartão para o que você já teria dinheiro para pagar à vista.",
-    "links": [{"label": "Curso: Crédito e dívidas", "path": "/cursos"}]
+    "links": [
+      {
+        "label": "Curso: Crédito e dívidas",
+        "path": "/cursos"
+      }
+    ],
+    "alternative": "O cartão de crédito é um empréstimo rápido com prazo curto: o banco paga a loja agora e você devolve na fatura. Se não devolver tudo, o empréstimo fica caro.",
+    "example": "Exemplo: você gasta R$ 300 no cartão e paga só R$ 50 da fatura. Os R$ 250 restantes entram no rotativo, que pode cobrar mais de 10% ao mês — em pouco tempo a dívida passa de R$ 300."
   },
   {
-    "id": "credit-02", "topic": "CREDIT",
-    "keywords": ["parcelar", "parcelado", "parcelas", "a vista", "sem juros"],
+    "id": "credit-02",
+    "topic": "CREDIT",
+    "keywords": [
+      "parcelar",
+      "parcelado",
+      "parcelas",
+      "a vista",
+      "sem juros"
+    ],
     "question": "É melhor comprar parcelado ou à vista?",
     "answer": "Depende. Se o parcelamento tem juros, você paga mais caro no total — compare o preço final. Se é \"sem juros\", pergunte se há desconto à vista: às vezes o desconto vale mais. E cuidado com muitas parcelas pequenas somadas: elas comprometem seu dinheiro dos próximos meses. Antes de parcelar, veja se as parcelas cabem no seu orçamento.",
-    "links": [{"label": "Calculadora", "path": "/calculadora"}]
+    "links": [
+      {
+        "label": "Calculadora",
+        "path": "/calculadora"
+      }
+    ],
+    "alternative": "Antes de parcelar, olhe o preço total, não só a parcela. Parcela pequena parece leve, mas várias juntas pesam no orçamento dos próximos meses.",
+    "example": "Exemplo: um fone custa R$ 300 à vista ou 10 × R$ 35 (total R$ 350). Parcelado, você paga R$ 50 a mais. Se houver desconto à vista de 10%, ele sai por R$ 270."
   },
   {
-    "id": "debt-01", "topic": "DEBT",
-    "keywords": ["divida", "dividas", "endividamento", "devendo", "emprestimo", "endividado"],
+    "id": "debt-01",
+    "topic": "DEBT",
+    "keywords": [
+      "divida",
+      "dividas",
+      "endividamento",
+      "devendo",
+      "emprestimo",
+      "endividado"
+    ],
     "question": "O que fazer para não me endividar?",
     "answer": "Algumas atitudes protegem você: gaste menos do que recebe; evite comprar por impulso (espere 24h antes de compras não planejadas); não use crédito para pagar desejos; tenha uma reserva para imprevistos; e acompanhe tudo que entra e sai. Se já existe uma dívida, liste quanto deve, a quem e com que juros, e priorize as de juros maiores — conversando com um responsável.",
-    "links": [{"label": "Curso: Crédito e dívidas", "path": "/cursos"}]
+    "links": [
+      {
+        "label": "Curso: Crédito e dívidas",
+        "path": "/cursos"
+      }
+    ],
+    "alternative": "Dívida é como um vazamento: quanto antes você encontra e fecha, menos água perde. Listar tudo o que deve é o primeiro passo para tapar o buraco.",
+    "example": "Exemplo: você deve R$ 100 a um amigo (sem juros) e R$ 200 no cartão (com juros altos). Priorize o cartão, porque ele cresce mais rápido, e combine um prazo honesto com o amigo."
   },
   {
-    "id": "consumption-01", "topic": "CONSCIOUS_CONSUMPTION",
-    "keywords": ["consumo consciente", "consumismo", "compra por impulso", "impulso", "gastar menos"],
+    "id": "consumption-01",
+    "topic": "CONSCIOUS_CONSUMPTION",
+    "keywords": [
+      "consumo consciente",
+      "consumismo",
+      "compra por impulso",
+      "impulso",
+      "gastar menos"
+    ],
     "question": "O que é consumo consciente?",
     "answer": "É pensar antes de comprar: eu preciso disso? Posso pagar sem prejudicar outras metas? Existe opção mais barata, usada ou emprestada? Qual o impacto para o meio ambiente? Dica prática: para compras não planejadas, espere 24 horas. Se a vontade passar, era impulso.",
-    "links": [{"label": "Cursos", "path": "/cursos"}]
+    "links": [
+      {
+        "label": "Cursos",
+        "path": "/cursos"
+      }
+    ],
+    "alternative": "Consumo consciente é comprar com intenção, e não no piloto automático. A pergunta-chave é: \"isso combina com o que eu quero para mim?\".",
+    "example": "Exemplo: antes de comprar uma camiseta nova, você confere se já tem algo parecido, se existe opção usada em bom estado e se o dinheiro não estava reservado para uma meta."
   },
   {
-    "id": "consumption-02", "topic": "CONSCIOUS_CONSUMPTION",
-    "keywords": ["microtransacao", "jogo", "jogos", "skin", "loot box", "assinatura", "assinaturas"],
+    "id": "consumption-02",
+    "topic": "CONSCIOUS_CONSUMPTION",
+    "keywords": [
+      "microtransacao",
+      "jogo",
+      "jogos",
+      "skin",
+      "loot box",
+      "assinatura",
+      "assinaturas"
+    ],
     "question": "Como evitar gastar demais com jogos e assinaturas?",
     "answer": "Gastos pequenos e frequentes somam muito. Defina um limite mensal para jogos e assinaturas e registre cada compra na plataforma (categoria \"Tecnologia e jogos\" ou \"Assinaturas\"). Revise assinaturas que você quase não usa. E cuidado com caixas de recompensa aleatórias (loot boxes): elas são desenhadas para estimular compras repetidas.",
-    "links": [{"label": "Transações", "path": "/transacoes"}]
+    "links": [
+      {
+        "label": "Transações",
+        "path": "/transacoes"
+      }
+    ],
+    "alternative": "Gastos pequenos e repetidos são como goteiras: uma gota não parece nada, mas no fim do mês o balde enche.",
+    "example": "Exemplo: R$ 10 por semana em itens de jogo dão R$ 40 por mês e R$ 480 por ano. Registre esses gastos na categoria \"Tecnologia e jogos\" e veja o total nos Relatórios."
   },
   {
-    "id": "investing-01", "topic": "INVESTING",
-    "keywords": ["investir", "investimento", "investimentos", "comecar a investir", "aplicar dinheiro"],
+    "id": "investing-01",
+    "topic": "INVESTING",
+    "keywords": [
+      "investir",
+      "investimento",
+      "investimentos",
+      "comecar a investir",
+      "aplicar dinheiro"
+    ],
     "question": "O que é investir?",
     "answer": "Investir é aplicar dinheiro hoje esperando ter mais no futuro. Todo investimento tem três características: rentabilidade (quanto pode render), risco (chance de perder ou render menos) e liquidez (rapidez para resgatar). Antes de investir, o ideal é ter metas claras e uma reserva de emergência. Menores de idade só podem investir com contas abertas e acompanhadas pelos responsáveis. Quer praticar sem dinheiro real? Use a Carteira Simulada!",
-    "links": [{"label": "Carteira simulada", "path": "/carteiras"}, {"label": "Curso: Primeiros passos nos investimentos", "path": "/cursos"}]
+    "links": [
+      {
+        "label": "Carteira simulada",
+        "path": "/carteiras"
+      },
+      {
+        "label": "Curso: Primeiros passos nos investimentos",
+        "path": "/cursos"
+      }
+    ],
+    "alternative": "Investir é colocar o dinheiro para trabalhar por você. Em vez de ficar parado, ele vai para um lugar onde pode render — sempre com algum risco e com regras de resgate.",
+    "example": "Exemplo: na Carteira Simulada, crie uma carteira com R$ 500 fictícios e uma taxa hipotética de 10% ao ano. Aplique o rendimento simulado mês a mês e veja a evolução, sem usar dinheiro real."
   },
   {
-    "id": "investing-02", "topic": "INVESTING",
-    "keywords": ["risco", "retorno", "risco e retorno", "perder dinheiro"],
+    "id": "investing-02",
+    "topic": "INVESTING",
+    "keywords": [
+      "risco",
+      "retorno",
+      "risco e retorno",
+      "perder dinheiro"
+    ],
     "question": "O que é risco e retorno?",
     "answer": "Em geral, investimentos que podem render mais também têm mais risco de oscilar ou de perder valor. Não existe investimento com retorno alto e risco zero — desconfie de promessas de \"lucro garantido\". Entender o próprio objetivo e prazo ajuda a escolher quanto risco faz sentido.",
-    "links": [{"label": "Curso de investimentos", "path": "/cursos"}]
+    "links": [
+      {
+        "label": "Curso de investimentos",
+        "path": "/cursos"
+      }
+    ],
+    "alternative": "Risco e retorno andam de mãos dadas: quem quer a chance de ganhar mais precisa aceitar que o valor pode oscilar ou até cair.",
+    "example": "Exemplo: um investimento conservador pode render pouco, mas de forma previsível; um mais arriscado pode subir muito em um ano e cair no outro. Desconfie de quem promete \"muito retorno sem risco\"."
   },
   {
-    "id": "investing-03", "topic": "INVESTING",
-    "keywords": ["renda fixa", "tesouro", "cdb", "poupanca", "renda variavel", "acoes", "bolsa"],
+    "id": "investing-03",
+    "topic": "INVESTING",
+    "keywords": [
+      "renda fixa",
+      "tesouro",
+      "cdb",
+      "poupanca",
+      "renda variavel",
+      "acoes",
+      "bolsa"
+    ],
     "question": "O que é renda fixa?",
     "answer": "Na renda fixa, as regras de rendimento são conhecidas no momento da aplicação (por exemplo, uma taxa ou um índice como a Selic ou o CDI). Exemplos: Tesouro Direto, CDBs e a poupança. Já na renda variável (como ações), o retorno não é previsível e o valor oscila. Isto é conteúdo educativo, não uma recomendação de investimento.",
-    "links": [{"label": "Curso de investimentos", "path": "/cursos"}]
+    "links": [
+      {
+        "label": "Curso de investimentos",
+        "path": "/cursos"
+      }
+    ],
+    "alternative": "Na renda fixa você sabe a regra do jogo desde o começo (uma taxa ou um índice). Na renda variável, o resultado depende do mercado e só é conhecido depois.",
+    "example": "Exemplo: um título que paga 100% do CDI segue uma regra definida na aplicação (renda fixa). Uma ação pode valer R$ 20 hoje e R$ 15 ou R$ 25 daqui a um mês (renda variável). Conteúdo educativo, não é recomendação."
   },
   {
-    "id": "investing-04", "topic": "INVESTING",
-    "keywords": ["diversificacao", "diversificar", "ovos na mesma cesta"],
+    "id": "investing-04",
+    "topic": "INVESTING",
+    "keywords": [
+      "diversificacao",
+      "diversificar",
+      "ovos na mesma cesta"
+    ],
     "question": "O que é diversificação?",
     "answer": "Diversificar é não colocar todo o dinheiro em um único lugar — \"não colocar todos os ovos na mesma cesta\". Assim, se um investimento for mal, os outros podem compensar. Diversificação reduz o risco, mas não o elimina.",
-    "links": [{"label": "Carteira simulada", "path": "/carteiras"}]
+    "links": [
+      {
+        "label": "Carteira simulada",
+        "path": "/carteiras"
+      }
+    ],
+    "alternative": "Diversificar é não depender de um único resultado, como um time que não depende de um único jogador para vencer.",
+    "example": "Exemplo: na carteira simulada, compare dois cenários com taxas diferentes. Se tudo estivesse em uma única aplicação que fosse mal, você sentiria a perda inteira; dividido, o impacto é menor."
   },
   {
-    "id": "investing-05", "topic": "INVESTING",
-    "keywords": ["liquidez", "resgatar", "resgate"],
+    "id": "investing-05",
+    "topic": "INVESTING",
+    "keywords": [
+      "liquidez",
+      "resgatar",
+      "resgate"
+    ],
     "question": "O que é liquidez?",
     "answer": "Liquidez é a facilidade e rapidez de transformar um investimento em dinheiro disponível sem perder valor. A reserva de emergência deve ficar em aplicações de alta liquidez, porque você pode precisar dela a qualquer momento.",
-    "links": [{"label": "Cursos", "path": "/cursos"}]
+    "links": [
+      {
+        "label": "Cursos",
+        "path": "/cursos"
+      }
+    ],
+    "alternative": "Liquidez é a rapidez para transformar o investimento em dinheiro disponível, como a diferença entre ter dinheiro no bolso e ter dinheiro guardado em um cofre que só abre daqui a um ano.",
+    "example": "Exemplo: a reserva de emergência precisa estar em algo que você consiga resgatar no mesmo dia, sem perder valor. Uma aplicação que só libera o dinheiro em 2 anos tem baixa liquidez."
   },
   {
-    "id": "safety-01", "topic": "SAFETY",
-    "keywords": ["golpe", "golpes", "fraude", "piramide", "pix errado", "seguranca"],
+    "id": "safety-01",
+    "topic": "SAFETY",
+    "keywords": [
+      "golpe",
+      "golpes",
+      "fraude",
+      "piramide",
+      "pix errado",
+      "seguranca"
+    ],
     "question": "Como me proteger de golpes financeiros?",
     "answer": "Sinais de alerta: promessa de ganho alto e rápido, pressão para decidir na hora, pedido de senha ou código, links estranhos e \"oportunidades\" que dependem de chamar mais pessoas (pirâmide). Nunca compartilhe senhas ou códigos — nem com quem diz ser do banco. Na dúvida, não clique, não pague e converse com um adulto de confiança.",
-    "links": [{"label": "Cursos", "path": "/cursos"}]
+    "links": [
+      {
+        "label": "Cursos",
+        "path": "/cursos"
+      }
+    ],
+    "alternative": "Golpistas usam pressa e promessas grandes para você não pensar. Se a oferta exige decisão imediata ou um código seu, pare.",
+    "example": "Exemplo: você recebe uma mensagem dizendo que ganhou um prêmio e precisa informar o código que chegou por SMS. Esse código dá acesso à sua conta. Não envie e mostre a mensagem a um adulto de confiança."
   },
   {
-    "id": "platform-01", "topic": "PLATFORM",
-    "keywords": ["criar meta", "nova meta", "como criar uma meta", "contribuicao", "contribuir", "retirada"],
+    "id": "platform-01",
+    "topic": "PLATFORM",
+    "keywords": [
+      "criar meta",
+      "nova meta",
+      "como criar uma meta",
+      "contribuicao",
+      "contribuir",
+      "retirada"
+    ],
     "question": "Como crio uma meta e registro contribuições?",
     "answer": "Vá em Metas → \"Nova meta\", informe título, valor desejado, categoria e (se quiser) um prazo. Depois, abra a meta e use \"Registrar contribuição\" sempre que guardar dinheiro. Se precisar usar parte do valor, registre uma \"Retirada\". A meta é concluída automaticamente quando o valor acumulado atinge o objetivo.",
-    "links": [{"label": "Ir para Metas", "path": "/metas"}]
+    "links": [
+      {
+        "label": "Ir para Metas",
+        "path": "/metas"
+      }
+    ]
   },
   {
-    "id": "platform-02", "topic": "PLATFORM",
-    "keywords": ["registrar transacao", "transacao", "transacoes", "receita", "despesa", "lancar gasto"],
+    "id": "platform-02",
+    "topic": "PLATFORM",
+    "keywords": [
+      "registrar transacao",
+      "transacao",
+      "transacoes",
+      "receita",
+      "despesa",
+      "lancar gasto"
+    ],
     "question": "Como registro minhas receitas e despesas?",
     "answer": "Em Transações → \"Nova transação\", escolha se é receita ou despesa, informe valor, categoria e data. Você pode marcar um registro como \"simulado\" quando for só um exercício. Use os filtros por período, tipo e categoria para analisar seus gastos, e veja os gráficos em Relatórios.",
-    "links": [{"label": "Ir para Transações", "path": "/transacoes"}, {"label": "Relatórios", "path": "/relatorios"}]
+    "links": [
+      {
+        "label": "Ir para Transações",
+        "path": "/transacoes"
+      },
+      {
+        "label": "Relatórios",
+        "path": "/relatorios"
+      }
+    ]
   },
   {
-    "id": "platform-03", "topic": "PLATFORM",
-    "keywords": ["pontos", "nivel", "conquista", "conquistas", "desafio", "desafios", "sequencia", "xp"],
+    "id": "platform-03",
+    "topic": "PLATFORM",
+    "keywords": [
+      "pontos",
+      "nivel",
+      "conquista",
+      "conquistas",
+      "desafio",
+      "desafios",
+      "sequencia",
+      "xp"
+    ],
     "question": "Como ganho pontos e conquistas?",
     "answer": "Você ganha pontos por aprender e por criar bons hábitos: concluir aulas (10), concluir cursos (50), ser aprovado em um quiz pela primeira vez (15), registrar movimentações (2 por dia), entre outros. Há desafios semanais e conquistas especiais. Os pontos nunca dependem de quanto dinheiro você tem — e não existe ranking público de valores.",
-    "links": [{"label": "Ver conquistas", "path": "/gamificacao"}]
+    "links": [
+      {
+        "label": "Ver conquistas",
+        "path": "/gamificacao"
+      }
+    ]
   },
   {
-    "id": "platform-04", "topic": "PLATFORM",
-    "keywords": ["calculadora", "simular", "simulacao", "simulador"],
+    "id": "platform-04",
+    "topic": "PLATFORM",
+    "keywords": [
+      "calculadora",
+      "simular",
+      "simulacao",
+      "simulador"
+    ],
     "question": "Como uso a calculadora de juros?",
     "answer": "Na Calculadora, escolha juros simples ou compostos, informe valor inicial, taxa (ao mês ou ao ano), período e aporte mensal. O gráfico mostra a evolução do valor investido e dos juros. Você pode comparar cenários lado a lado e salvar simulações. Lembre-se: é uma simulação matemática com taxa constante, não uma previsão de rendimento.",
-    "links": [{"label": "Abrir calculadora", "path": "/calculadora"}]
+    "links": [
+      {
+        "label": "Abrir calculadora",
+        "path": "/calculadora"
+      }
+    ]
   },
   {
-    "id": "platform-05", "topic": "PLATFORM",
-    "keywords": ["carteira simulada", "carteira", "carteiras"],
+    "id": "platform-05",
+    "topic": "PLATFORM",
+    "keywords": [
+      "carteira simulada",
+      "carteira",
+      "carteiras"
+    ],
     "question": "O que é a carteira simulada?",
     "answer": "É um laboratório para praticar sem dinheiro real. Você cria uma carteira, define um saldo inicial fictício e uma taxa hipotética, registra aportes e retiradas e aplica rendimentos simulados mês a mês. Também dá para comparar cenários com taxas diferentes. Nada ali é dinheiro de verdade nem cotação de mercado.",
-    "links": [{"label": "Carteiras simuladas", "path": "/carteiras"}]
+    "links": [
+      {
+        "label": "Carteiras simuladas",
+        "path": "/carteiras"
+      }
+    ]
   },
   {
-    "id": "platform-06", "topic": "PLATFORM",
-    "keywords": ["comunidade", "forum", "publicacao", "publicar", "denunciar", "regras"],
+    "id": "platform-06",
+    "topic": "PLATFORM",
+    "keywords": [
+      "comunidade",
+      "forum",
+      "publicacao",
+      "publicar",
+      "denunciar",
+      "regras"
+    ],
     "question": "Quais são as regras da comunidade?",
     "answer": "Seja respeitoso, compartilhe aprendizados e tire dúvidas. Não publique dados pessoais (telefone, e-mail, documentos), nem valores da sua vida financeira que você não queira expor. Ofensas, spam e promessas de dinheiro fácil são proibidos. Viu algo errado? Use o botão \"Denunciar\": a moderação analisa, e conteúdos com várias denúncias ficam ocultos até a revisão.",
-    "links": [{"label": "Comunidade", "path": "/comunidade"}]
+    "links": [
+      {
+        "label": "Comunidade",
+        "path": "/comunidade"
+      }
+    ]
   },
   {
-    "id": "platform-07", "topic": "PLATFORM",
-    "keywords": ["quiz", "quizzes", "teste", "perguntas"],
+    "id": "platform-07",
+    "topic": "PLATFORM",
+    "keywords": [
+      "quiz",
+      "quizzes",
+      "teste",
+      "perguntas"
+    ],
     "question": "Como funcionam os quizzes?",
     "answer": "Escolha um quiz por tema e nível. A cada resposta, você vê se acertou e uma explicação. No final, mostramos sua pontuação, o percentual de acertos e cursos recomendados para os temas em que você teve mais dificuldade. Você pode refazer quando quiser para ver sua evolução.",
-    "links": [{"label": "Quizzes", "path": "/quizzes"}]
+    "links": [
+      {
+        "label": "Quizzes",
+        "path": "/quizzes"
+      }
+    ]
   },
   {
-    "id": "platform-08", "topic": "PLATFORM",
-    "keywords": ["privacidade", "meus dados", "excluir conta", "apagar conta", "lgpd", "exportar"],
+    "id": "platform-08",
+    "topic": "PLATFORM",
+    "keywords": [
+      "privacidade",
+      "meus dados",
+      "excluir conta",
+      "apagar conta",
+      "lgpd",
+      "exportar"
+    ],
     "question": "Como meus dados são protegidos?",
     "answer": "Seus registros financeiros são privados: só você vê. Pedimos o mínimo de dados (e-mail, apelido e senha). Em Perfil você pode baixar uma cópia dos seus dados ou excluir sua conta definitivamente. Nunca pedimos senhas de banco.",
-    "links": [{"label": "Perfil", "path": "/perfil"}]
+    "links": [
+      {
+        "label": "Perfil",
+        "path": "/perfil"
+      }
+    ]
   }
 ]

@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react'
 import { Link, useSearchParams } from 'react-router'
 import { api, errorMessage } from '../api/client'
 import { TextField } from '../components/form'
-import { Logo } from '../components/Logo'
+import { AuthLayout } from '../components/AuthLayout'
 import { Alert, Button } from '../components/ui'
 import { PASSWORD_RULE } from '../utils/validation'
 
@@ -32,9 +32,7 @@ export function ResetPasswordPage() {
   }
 
   return (
-    <div className="auth-page">
-      <div className="auth-card stack">
-        <Logo to="/" />
+    <AuthLayout>
         <div className="card">
           <h1>Nova senha</h1>
           {!token && <Alert tone="error">Link inválido. Solicite um novo link de redefinição.</Alert>}
@@ -54,7 +52,6 @@ export function ResetPasswordPage() {
             )
           )}
         </div>
-      </div>
-    </div>
+    </AuthLayout>
   )
 }

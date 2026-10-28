@@ -80,3 +80,44 @@ sessões invalidadas após troca de senha/papel/desativação, link de redefini�
 - Interface administrativa de conteúdo cobre cursos, módulos, aulas e quizzes, mas não reordena itens existentes (novos itens entram ao final).
 - Node 20.18 exige instalação manual das bindings nativas do Vite/Oxlint (recomendado Node 22 LTS).
 - O projeto não é um repositório Git (a pasta original não era); nenhum commit foi feito.
+
+---
+
+# Modernização EduFin AI (28/10/2026)
+
+## Estado encontrado
+Typecheck e lint limpos, 29 testes de frontend e 112 de backend passando. Problemas: identidade genérica
+(tema verde-água claro), navegação com finanças antes do aprendizado, painel com 12 blocos de mesmo peso,
+aula sem navegação entre módulos nem progresso do curso, tutor apenas como chat livre (sem contexto, sem
+modos, sem ajuda em exercícios), catálogo sem busca e com bug no selo "Etapa N" (usava o índice da lista
+filtrada), marcação duplicada (voltar, estrelas). Na instância local em execução, o H2 2.4.240 passou a
+recusar cadastros com `Check constraint invalid` (23514) após horas de uso.
+
+## O que mudou
+- **Identidade e design system:** tokens centralizados (escuro padrão, claro opcional), Inter auto-hospedada,
+  roxo para IA, ciano para interação, gradiente só em pontos de IA. Ver `docs/DESIGN.md`.
+- **Tutor (backend):** contexto da aula, modos "outra explicação" e "exemplo" (21 temas com textos curados),
+  dica de quiz sem resposta, sugestões por tema, pontuação de frases corrigida; `generativeModel: false`
+  exposto e mostrado ao aluno.
+- **Telas:** página inicial (proposta, trilha real via `/api/public/courses`, exemplo de conversa rotulado),
+  acesso (layout com painel da marca), Início do aluno reorganizado, catálogo com busca, aula com navegação
+  de módulos (coluna ou lista recolhível) e painel do tutor, quiz com dica, página do Tutor IA.
+- **Código:** `TutorChat`, `AuthLayout`, `BackLink`, `Stars` substituem duplicações; variante `ai` em botões e selos.
+- **Correções:** selo de etapa do catálogo; navegação de aulas ausente em telas ≤ 1280 px (detectado pelo E2E);
+  H2 fixado em 2.3.232 (versão verificada pelo Flyway).
+
+## Validação executada
+| Suíte | Resultado |
+|---|---|
+| Backend `mvn package` (testes incluídos) | **119 testes, 0 falhas, 1 ignorado** (PostgreSQL/Docker) |
+| Frontend `vitest run` | **34/34** |
+| `tsc -b` / `oxlint` | sem erros / 0 avisos |
+| Playwright contra a aplicação em execução | **14/14** (inclui tutor na aula, dica de quiz, 390 px e 820 px sem rolagem horizontal) |
+| Revisão visual | página inicial, login, Início (novo e com curso em andamento), catálogo, aula (1440 e 1280 px), tutor, quiz com dica, celular |
+
+## Lacunas que permanecem
+- Não há modelo de IA generativa: o tutor responde só com a base curada (perguntas fora dela recebem
+  "ainda não sei responder"). A interface deixa isso explícito.
+- O tutor não guarda histórico de conversa entre visitas (decisão de privacidade).
+- A causa raiz do erro do H2 2.4.240 não foi isolada; a mitigação é a fixação de versão (PostgreSQL não é afetado).
+- Testes em PostgreSQL real seguem dependentes de Docker em execução.

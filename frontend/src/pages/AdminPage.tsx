@@ -6,7 +6,7 @@ import { useAuth } from '../auth/AuthContext'
 import { SelectField, TextAreaField } from '../components/form'
 import { ConfirmDialog, Modal } from '../components/Modal'
 import { useToast } from '../components/Toast'
-import { Alert, Badge, Button, Card, EmptyState, ErrorState, PageHeader, Pagination, Spinner, Stat, Tabs } from '../components/ui'
+import { Alert, Badge, Button, Card, Stars, EmptyState, ErrorState, PageHeader, Pagination, Spinner, Stat, Tabs } from '../components/ui'
 import { dateTime } from '../utils/format'
 import { feedbackStatusLabel, feedbackTypeLabel, options, reportReasonLabel, roleLabel } from '../utils/labels'
 import { AdminCourses, AdminQuizzes } from './AdminContent'
@@ -237,7 +237,7 @@ function Moderation() {
           <ul className="list">
             {reviews.data?.content.map((r) => (
               <li key={r.id} className="row-between">
-                <span><strong>{r.author}</strong> · {'★'.repeat(r.rating)} · curso #{r.courseId}<div className="small">{r.comment ?? <span className="muted">Sem comentário</span>}</div></span>
+                <span><strong>{r.author}</strong> · <Stars value={r.rating} size={12} /> · curso #{r.courseId}<div className="small">{r.comment ?? <span className="muted">Sem comentário</span>}</div></span>
                 <Button size="sm" variant={r.hidden ? 'secondary' : 'ghost'} onClick={() => reviewHidden.mutate({ id: r.id, hidden: !r.hidden })}>{r.hidden ? 'Mostrar' : 'Ocultar'}</Button>
               </li>
             ))}

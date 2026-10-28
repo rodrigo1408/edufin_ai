@@ -1,4 +1,4 @@
-# Arquitetura e decisões técnicas — EduFin
+# Arquitetura e decisões técnicas — EduFin AI
 
 ## Visão geral
 
@@ -83,10 +83,11 @@ O cliente recebe perguntas sem a alternativa correta. Cada resposta é registrad
 única), e a nota é calculada a partir das respostas persistidas ao finalizar. O corpo enviado pelo cliente
 no "finalizar" é ignorado.
 
-### ADR-10 — Assistente com base de conhecimento local e interface plugável
+### ADR-10 — Tutor com base de conhecimento local, contexto de estudo e interface plugável
 Sem credenciais de IA disponíveis, o assistente usa respostas curadas (JSON versionado) e salvaguardas
 independentes do provedor (bloqueio de senhas/cartões, recusa de recomendação personalizada). A interface
 `ChatbotProvider` permite adicionar um LLM depois sem mudar controlador nem salvaguardas.
+**Evolução (EduFin AI):** o tutor recebe o contexto da aula (`lessonId` → tema do curso), que prioriza respostas do mesmo tema; oferece os modos `ALTERNATIVE` e `EXAMPLE` sobre a resposta anterior (`entryId`), com textos curados; e expõe `POST /api/chatbot/hint/question/{id}`, que explica o conceito do tema da pergunta sem nunca devolver a alternativa correta. Frases-chave pontuam só pelas palavras significativas, para que perguntas específicas ("juros compostos") vençam as genéricas ("o que são juros").
 
 ### ADR-11 — Frontend React + Vite + TypeScript
 SPA com React 19, TanStack Query (cache, estados de carregamento/erro, revalidação), React Router 7 e

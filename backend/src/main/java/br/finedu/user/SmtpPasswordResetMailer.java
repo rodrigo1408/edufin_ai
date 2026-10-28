@@ -24,11 +24,11 @@ public class SmtpPasswordResetMailer implements PasswordResetMailer {
         SimpleMailMessage msg = new SimpleMailMessage();
         msg.setFrom(from);
         msg.setTo(toEmail);
-        msg.setSubject("EduFin - redefinição de senha");
+        msg.setSubject("EduFin AI - redefinição de senha");
         msg.setText("""
                 Olá, %s!
 
-                Recebemos um pedido para redefinir a sua senha no EduFin.
+                Recebemos um pedido para redefinir a sua senha no EduFin AI.
                 Use o link abaixo em até 30 minutos:
 
                 %s

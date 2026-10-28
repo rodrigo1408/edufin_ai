@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { ArrowLeft, CheckCircle2, XCircle } from 'lucide-react'
+import { CheckCircle2, Sparkles, XCircle } from 'lucide-react'
 import { api, errorMessage } from '../api/client'
-import type { AnswerFeedback, AttemptResult, AttemptView } from '../api/types'
+import type { AnswerFeedback, AttemptResult, AttemptView, ChatResponse } from '../api/types'
 import { useToast } from '../components/Toast'
-import { Alert, Button, Card, ErrorState, PageHeader, ProgressBar, Spinner } from '../components/ui'
+import { Alert, BackLink, Button, Card, ErrorState, PageHeader, ProgressBar, Spinner } from '../components/ui'
 
 /**
  * Execução do quiz. As perguntas chegam SEM a alternativa correta; a correção de cada resposta e a
@@ -31,6 +31,7 @@ export function QuizRunner({ attempt }: { attempt: AttemptView }) {
   })
   const [selected, setSelected] = useState<number | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [hint, setHint] = useState<{ questionId: number | null; data: string | null; loading: boolean }>({ questionId: null, data: null, loading: false })
 
   const answer = useMutation({
     mutationFn: (body: { questionId: number; optionId: number }) => api.post<AnswerFeedback>(`/api/quiz-attempts/${attempt.attemptId}/answers`, body),
@@ -64,10 +65,21 @@ export function QuizRunner({ attempt }: { attempt: AttemptView }) {
     setSelected(null)
     setIndex(i)
   }
+  // Dica conceitual do tutor: o servidor nunca devolve a alternativa correta por esta rota.
+  const requestHint = async (questionId: number) => {
+    setHint({ questionId, data: null, loading: true })
+    try {
+      const r = await api.post<ChatResponse>(`/api/chatbot/hint/question/${questionId}`)
+      setHint({ questionId, data: r.answer, loading: false })
+    } catch (e) {
+      setHint({ questionId: null, data: null, loading: false })
+      setError(errorMessage(e))
+    }
+  }
 
   return (
     <>
-      <Link to="/quizzes" className="btn btn-ghost btn-sm" style={{ marginBottom: 8 }}><ArrowLeft size={14} aria-hidden /> Quizzes</Link>
+      <BackLink to="/quizzes">Quizzes</BackLink>
       <PageHeader title={attempt.quizTitle} subtitle={`Pergunta ${index + 1} de ${questions.length}`} />
       <ProgressBar value={(answeredCount / questions.length) * 100} label="Perguntas respondidas" />
       {q && (
@@ -98,9 +110,23 @@ export function QuizRunner({ attempt }: { attempt: AttemptView }) {
               </Alert>
             </div>
           )}
+          {!fb && hint.data && hint.questionId === q.id && (
+            <div className="ai-surface" style={{ padding: 14 }} aria-live="polite">
+              <div className="tutor-head" style={{ marginBottom: 8 }}>
+                <span className="ai-mark" style={{ width: 28, height: 28 }} aria-hidden><Sparkles size={15} /></span>
+                <strong>Dica do tutor</strong>
+              </div>
+              <p className="small" style={{ whiteSpace: 'pre-wrap', margin: 0 }}>{hint.data}</p>
+            </div>
+          )}
           {error && <Alert tone="error">{error}</Alert>}
           <div className="row">
             {index > 0 && <Button variant="secondary" onClick={() => go(index - 1)}>Anterior</Button>}
+            {!fb && !(hint.questionId === q.id && hint.data) && (
+              <Button variant="ghost" onClick={() => requestHint(q.id)} loading={hint.loading}>
+                <Sparkles size={16} aria-hidden /> Pedir dica ao tutor
+              </Button>
+            )}
             <span className="spacer" />
             {!fb && <Button onClick={confirm} disabled={selected === null} loading={answer.isPending}>Responder</Button>}
             {fb && index < questions.length - 1 && <Button onClick={() => go(index + 1)}>Próxima pergunta</Button>}

@@ -1,13 +1,13 @@
 import { useState, type FormEvent } from 'react'
-import { Link, useParams } from 'react-router'
+import { useParams } from 'react-router'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { ArrowDownCircle, ArrowLeft, ArrowUpCircle, Pencil, XCircle } from 'lucide-react'
+import { ArrowDownCircle, ArrowUpCircle, Pencil, XCircle } from 'lucide-react'
 import { api, errorMessage } from '../api/client'
 import type { Goal, GoalMovement, Page, Reward } from '../api/types'
 import { TextField } from '../components/form'
 import { ConfirmDialog, Modal } from '../components/Modal'
 import { useToast } from '../components/Toast'
-import { Alert, Badge, Button, Card, EmptyState, ErrorState, PageHeader, Pagination, ProgressBar, Spinner, Stat } from '../components/ui'
+import { BackLink, Alert, Badge, Button, Card, EmptyState, ErrorState, PageHeader, Pagination, ProgressBar, Spinner, Stat } from '../components/ui'
 import { date, dateTime, hasMaxTwoDecimals, money, parseAmount, percent } from '../utils/format'
 import { goalCategoryLabel, goalStatusLabel } from '../utils/labels'
 import { GoalForm, type GoalPayload } from './GoalForm'
@@ -55,7 +55,7 @@ export function GoalDetailPage() {
 
   return (
     <>
-      <Link to="/metas" className="btn btn-ghost btn-sm" style={{ marginBottom: 8 }}><ArrowLeft size={14} aria-hidden /> Metas</Link>
+      <BackLink to="/metas">Metas</BackLink>
       <PageHeader
         title={g.title}
         subtitle={g.description ?? goalCategoryLabel[g.category]}

@@ -1,9 +1,9 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
-import { AlertTriangle, ChevronLeft, ChevronRight, Inbox } from 'lucide-react'
+import { AlertTriangle, ArrowLeft, ChevronLeft, ChevronRight, Inbox, Star } from 'lucide-react'
 import { Link } from 'react-router'
 import { errorMessage } from '../api/client'
 
-type Variant = 'primary' | 'secondary' | 'ghost' | 'danger'
+type Variant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'ai'
 
 export function Button({
   variant = 'primary',
@@ -61,7 +61,7 @@ export function PageHeader({ title, subtitle, actions }: { title: string; subtit
   )
 }
 
-export function Badge({ children, tone }: { children: ReactNode; tone?: 'primary' | 'success' | 'warning' | 'danger' | 'info' | 'accent' }) {
+export function Badge({ children, tone }: { children: ReactNode; tone?: 'primary' | 'success' | 'warning' | 'danger' | 'info' | 'accent' | 'ai' }) {
   return <span className={`badge ${tone ? 'badge-' + tone : ''}`}>{children}</span>
 }
 
@@ -171,5 +171,26 @@ export function Chips<T extends string>({ items, value, onChange, label }: { ite
         </button>
       ))}
     </div>
+  )
+}
+
+/** Link de retorno para a página anterior na hierarquia (ex.: aula → curso). */
+export function BackLink({ to, children }: { to: string; children: ReactNode }) {
+  return (
+    <Link to={to} className="back-link">
+      <ArrowLeft size={14} aria-hidden /> {children}
+    </Link>
+  )
+}
+
+/** Avaliação de 1 a 5 em estrelas, com texto acessível. */
+export function Stars({ value, size = 14 }: { value: number; size?: number }) {
+  const v = Math.round(value)
+  return (
+    <span className="row" style={{ gap: 2, display: 'inline-flex' }} role="img" aria-label={`${v} de 5 estrelas`}>
+      {[1, 2, 3, 4, 5].map((n) => (
+        <Star key={n} size={size} aria-hidden fill={n <= v ? 'var(--accent)' : 'none'} color="var(--accent)" />
+      ))}
+    </span>
   )
 }

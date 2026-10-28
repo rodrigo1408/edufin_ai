@@ -66,7 +66,7 @@ public class UserService {
         User user = users.save(new User(email, passwordEncoder.encode(rawPassword), displayName, role, time.now()));
         preferences.save(new UserPreferences(user.getId()));
         activity.record(user.getId(), ActivityLog.Type.ACCOUNT_CREATED, "Conta criada");
-        notifications.notify(user.getId(), NotificationType.WELCOME, "Boas-vindas ao EduFin!",
+        notifications.notify(user.getId(), NotificationType.WELCOME, "Boas-vindas ao EduFin AI!",
                 "Comece criando sua primeira meta ou fazendo o curso \"Primeiros passos com o dinheiro\".",
                 "/cursos", "WELCOME");
         log.info("Usuário criado id={} papel={}", user.getId(), role);

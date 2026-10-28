@@ -5,7 +5,7 @@ import { api, errorMessage } from '../api/client'
 import type { PublicConfig } from '../api/types'
 import { useAuth } from '../auth/AuthContext'
 import { TextField } from '../components/form'
-import { Logo } from '../components/Logo'
+import { AuthLayout } from '../components/AuthLayout'
 import { Modal } from '../components/Modal'
 import { Alert, Button } from '../components/ui'
 
@@ -39,9 +39,7 @@ export function LoginPage() {
   }
 
   return (
-    <div className="auth-page">
-      <div className="auth-card stack">
-        <Logo to="/" />
+    <AuthLayout>
         <div className="card">
           <h1>Entrar</h1>
           <p className="muted">Que bom ver você de novo!</p>
@@ -58,9 +56,8 @@ export function LoginPage() {
         <p className="small muted" style={{ textAlign: 'center' }}>
           Ainda não tem conta? <Link to="/cadastro">Cadastre-se</Link>
         </p>
-      </div>
       <ForgotPassword open={forgotOpen} onClose={() => setForgotOpen(false)} />
-    </div>
+    </AuthLayout>
   )
 }
 
