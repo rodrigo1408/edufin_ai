@@ -2,7 +2,7 @@
 
 Plataforma de educação financeira para adolescentes.
 
-Aplicação web completa para ensinar finanças pessoais a adolescentes: metas financeiras, registro de
+Aplicação web completa para ensinar finanças pessoais: metas financeiras, registro de
 receitas e despesas, calculadora de juros, cursos progressivos, quizzes com correção no servidor,
 gamificação saudável, notificações internas, relatórios, **tutor educativo integrado às aulas e aos quizzes**, comunidade moderada,
 carteiras de investimento **simuladas** e canal de feedback — com área administrativa por permissões.
